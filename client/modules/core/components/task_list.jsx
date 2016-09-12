@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import useSheet from 'react-jss';
 
-import Task from './task.jsx';
+import Task from '../containers/task.js';
 
 // const TaskList = ({ sheet, tasks }) => {
 class TaskList extends React.Component {
