@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Load from 'shingon-load-jss';
 
-const Task = ({ task, sheet, toggleChecked, deleteTask }) => {
+const Task = ({ task, toggleChecked, deleteTask }) => {
   const { classes } = Load(styles);
   const handleDelete = () => deleteTask(task._id);
   const handleCheck = () => toggleChecked(task._id, task.checked);

@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import useSheet from 'react-jss';
-// import jss from 'jss';
 import Load from 'shingon-load-jss';
 
 class NewTask extends React.Component {
@@ -10,8 +8,6 @@ class NewTask extends React.Component {
   }
 
   render() {
-    // const { newTask } = this.props.sheet.classes;
-    // const { classes } = jss.createStyleSheet(styles).attach();
     const { classes } = Load(styles);
 
     return (
@@ -56,5 +52,4 @@ const styles = {
   }
 };
 
-// export default useSheet(NewTask, styles);
 export default NewTask;

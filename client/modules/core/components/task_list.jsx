@@ -1,14 +1,10 @@
 import React from 'react';
-// import useSheet from 'react-jss';
-// import jss from 'jss';
 import Load from 'shingon-load-jss';
 
 import Task from '../containers/task.js';
 import NewTask from '../containers/new_task.js';
 
 const TaskList = ({ tasks }) => {
-  // const { classes } = sheet;
-  // const { classes } = jss.createStyleSheet(styles).attach();
   const { classes } = Load(styles);
 
   return (
@@ -38,5 +34,4 @@ const styles = {
   },
 };
 
-// export default useSheet(TaskList, styles);
 export default TaskList;
