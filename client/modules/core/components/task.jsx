@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import useSheet from 'react-jss';
+import Load from 'shingon-load-jss';
 
 const Task = ({ task, sheet, toggleChecked, deleteTask }) => {
-  const { classes } = sheet;
+  const { classes } = Load(styles);
   const handleDelete = () => deleteTask(task._id);
   const handleCheck = () => toggleChecked(task._id, task.checked);
 
@@ -51,4 +51,4 @@ const styles = {
   }
 };
 
-export default useSheet(Task, styles);
+export default Task;

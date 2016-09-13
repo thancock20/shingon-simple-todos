@@ -1,57 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import useSheet from 'react-jss';
+// import useSheet from 'react-jss';
+// import jss from 'jss';
+import Load from 'shingon-load-jss';
 
 import Task from '../containers/task.js';
+import NewTask from '../containers/new_task.js';
 
-// const TaskList = ({ sheet, tasks }) => {
-class TaskList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const TaskList = ({  tasks }) => {
+  // const { classes } = sheet;
+  // const { classes } = jss.createStyleSheet(styles).attach();
+  const { classes } = Load(styles);
 
-  render() {
-    const { container } = this.props.sheet.classes;
-    const { tasks } = this.props;
+  return (
+    <div className={classes.container}>
+      <header>
+        <h1>Todo List</h1>
+        <NewTask />
+      </header>
 
-    return (
-      <div className={container}>
-        <header>
-          <h1>Todo List</h1>
-
-          <form className="new-task" onSubmit={this.createTask.bind(this)} >
-            <input
-              type="text"
-              ref="textInput"
-              placeholder="Type to add new tasks"
-            />
-          </form>
-        </header>
-
-        <ul>
-          {
-            tasks.map((task) => (
-              <Task key={task._id} task={task} />
-            ))
-          }
-        </ul>
-      </div>
-    );
-  }
-
-  createTask(event) {
-    if (event && event.preventDefault) {
-      event.preventDefault();
-    }
-
-    const {create} = this.props;
-    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-
-    create(text);
-
-    ReactDOM.findDOMNode(this.refs.textInput).value = '';
-  }
-}
+      <ul>
+        {
+          tasks.map((task) => (
+            <Task key={task._id} task={task} />
+          ))
+        }
+      </ul>
+    </div>
+  );
+};
 
 const styles = {
   container: {
@@ -60,18 +36,7 @@ const styles = {
     minHeight: '100%',
     background: 'white',
   },
-  'new-task input': {
-    boxSizing: 'border-box',
-    padding: '10px 0',
-    background: 'transparent',
-    border: 'none',
-    width: '100%',
-    paddingRight: 80,
-    fontSize: '1em',
-    '&:focus': {
-      outline: 0
-    }
-  }
 };
 
-export default useSheet(TaskList, styles);
+// export default useSheet(TaskList, styles);
+export default TaskList;

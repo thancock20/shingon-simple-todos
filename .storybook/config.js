@@ -1,11 +1,11 @@
 import { configure, setAddon, addDecorator } from '@kadira/storybook';
-import { disable } from 'react-komposer';
+import { setStubbingMode } from 'react-komposer';
 
-disable();
+setStubbingMode(true);
 
 import styles from '../client/styles/index';
-import load from '../lib/style_loader';
-load(styles);
+import Load from 'shingon-load-jss';
+Load(styles, 'global');
 
 function loadStories() {
   // require as many as stories you need.

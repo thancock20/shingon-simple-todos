@@ -2,6 +2,27 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
 import TaskList from '../task_list.jsx';
+import NewTask from '../../containers/new_task';
+import Task from '../../containers/task.js';
+
+setComposerStub(NewTask, (props) => {
+  const data = {
+    ...props,
+    create: () => {}
+  };
+
+  return data;
+});
+
+setComposerStub(Task, (props) => {
+  const data = {
+    ...props,
+    toggleChecked: () => {},
+    deleteTask: () => {}
+  };
+
+  return data;
+});
 
 storiesOf('core.TaskList', module)
   .add('default view', () => {
