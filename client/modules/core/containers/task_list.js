@@ -3,9 +3,11 @@ import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import TaskList from '../components/task_list.jsx';
 
 export const composer = ({context}, onData) => {
-  const {Meteor, Collections} = context();
+  const {LocalState, Collections} = context();
   const tasks = Collections.Tasks.find({}, { sort: { createdAt: -1 } }).fetch();
-  onData(null, {tasks});
+  const incompleteCount = Collections.Tasks.find({ checked: { $ne: true } }).count()
+  const hideCompleted = LocalState.get('hideCompleted') || false;
+  onData(null, {tasks, incompleteCount, hideCompleted});
 };
 
 export const depsMapper = (context, actions) => ({

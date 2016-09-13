@@ -15,5 +15,10 @@ export default {
 
   deleteTask({Collections}, taskId) {
     Collections.Tasks.remove(taskId);
+  },
+
+  toggleHideCompleted({LocalState}) {
+    const hideCompleted = LocalState.get('hideCompleted');
+    LocalState.set('hideCompleted', !hideCompleted);
   }
 };

@@ -11,6 +11,11 @@ describe('core.components.task_list', () => {
     expect(el.find('h1').text()).to.be.match(/Todo List/);
   });
 
+  it('should display a checkbox for hiding completed tasks', () => {
+    const el = shallow(<TaskList tasks={[]} />);
+    expect(el.find('UseDeps(Container(HideCompleted))').length).to.equal(1);
+  });
+
   it('should display a New Task input', () => {
     const el = shallow(<TaskList tasks={[]} />);
     expect(el.find('UseDeps(Container(NewTask))').length).to.equal(1);

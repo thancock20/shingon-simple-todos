@@ -4,6 +4,7 @@ import { setComposerStub } from 'react-komposer';
 import TaskList from '../task_list.jsx';
 import NewTask from '../../containers/new_task';
 import Task from '../../containers/task.js';
+import HideCompleted from '../../containers/hide_completed';
 
 setComposerStub(NewTask, (props) => {
   const data = {
@@ -24,6 +25,15 @@ setComposerStub(Task, (props) => {
   return data;
 });
 
+setComposerStub(HideCompleted, (props) => {
+  const data = {
+    ...props,
+    toggleHideCompleted: () => {}
+  };
+
+  return data;
+});
+
 storiesOf('core.TaskList', module)
   .add('default view', () => {
     const tasks = [
@@ -33,6 +43,6 @@ storiesOf('core.TaskList', module)
     ];
 
     return (
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} incompleteCount={3} />
     );
   });
