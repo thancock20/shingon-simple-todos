@@ -6,7 +6,7 @@ import Load from 'shingon-load-jss';
 import Task from '../containers/task.js';
 import NewTask from '../containers/new_task.js';
 
-const TaskList = ({  tasks }) => {
+const TaskList = ({ tasks }) => {
   // const { classes } = sheet;
   // const { classes } = jss.createStyleSheet(styles).attach();
   const { classes } = Load(styles);
