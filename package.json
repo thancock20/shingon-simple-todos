@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.5",
     "mantra-core": "^1.2.0",
     "object-merge": "^2.5.1",
     "react": "^15.0.0",

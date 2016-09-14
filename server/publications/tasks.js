@@ -4,6 +4,11 @@ import {check} from 'meteor/check';
 
 export default function () {
   Meteor.publish('tasks', function () {
-    return Tasks.find();
+    return Tasks.find({
+      $or: [
+        { private: { $ne: true } },
+        { owner: this.userId }
+      ]
+    });
   });
 }

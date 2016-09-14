@@ -10,6 +10,7 @@ export const composer = ({context}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   toggleChecked: actions.tasks.toggleChecked,
+  togglePrivate: actions.tasks.togglePrivate,
   deleteTask: actions.tasks.deleteTask,
   context: () => context
 });

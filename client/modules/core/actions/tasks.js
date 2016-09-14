@@ -7,6 +7,10 @@ export default {
     Meteor.call('tasks.setChecked', taskId, !checked);
   },
 
+  togglePrivate({Meteor}, taskId, taskPrivate) {
+    Meteor.call('tasks.setPrivate', taskId, !taskPrivate);
+  },
+
   deleteTask({Meteor}, taskId) {
     Meteor.call('tasks.remove', taskId);
   },
