@@ -4,6 +4,7 @@ import TaskList from '../components/task_list.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, LocalState, Collections} = context();
+  Meteor.subscribe('tasks');
   const tasks = Collections.Tasks.find({}, { sort: { createdAt: -1 } }).fetch();
   const incompleteCount = Collections.Tasks.find({ checked: { $ne: true } }).count();
   const currentUser = Meteor.user();

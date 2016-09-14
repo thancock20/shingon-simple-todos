@@ -9,7 +9,6 @@ allow-deny@1.0.5
 alt:react@1.0.3
 alt:react-accounts-ui@1.2.1
 alt:react-accounts-unstyled@1.2.1
-autopublish@1.0.7
 autoupdate@1.2.11
 babel-compiler@6.9.1
 babel-runtime@0.1.11
