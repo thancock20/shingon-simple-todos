@@ -17,7 +17,9 @@ const Task = ({ task, toggleChecked, deleteTask }) => {
         onClick={handleCheck}
       />
 
-    <span className={classes.text}>{ task.text }</span>
+    <span className={classes.text}>
+      <strong>{task.username}</strong>: { task.text }
+    </span>
     </li>
   );
 };
