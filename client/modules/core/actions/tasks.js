@@ -1,24 +1,14 @@
-import { Meteor } from 'meteor/meteor';
-
 export default {
-  create({Collections}, text) {
-    Collections.Tasks.insert({
-      text,
-      checked: false,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+  create({Meteor}, text) {
+    Meteor.call('tasks.insert', text);
   },
 
-  toggleChecked({Collections}, taskId, checked) {
-    Collections.Tasks.update(taskId, {
-      $set: { checked: !checked}
-    });
+  toggleChecked({Meteor}, taskId, checked) {
+    Meteor.call('tasks.setChecked', taskId, !checked);
   },
 
-  deleteTask({Collections}, taskId) {
-    Collections.Tasks.remove(taskId);
+  deleteTask({Meteor}, taskId) {
+    Meteor.call('tasks.remove', taskId);
   },
 
   toggleHideCompleted({LocalState}) {
