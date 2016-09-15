@@ -8,7 +8,6 @@ class NewTask extends React.Component {
   }
 
   render() {
-    const { classes } = Load(styles);
 
     return (
       <form onSubmit={this.createTask.bind(this)} >
@@ -51,5 +50,6 @@ const styles = {
     }
   }
 };
+const { classes } = Load(styles);
 
 export default NewTask;

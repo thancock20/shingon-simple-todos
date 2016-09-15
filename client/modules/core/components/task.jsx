@@ -2,39 +2,40 @@ import React, { PropTypes } from 'react';
 import Load from 'shingon-load-jss';
 import classnames from 'classnames';
 
-const Task = ({ task, showPrivateButton, toggleChecked, togglePrivate, deleteTask }) => {
-  const { classes } = Load(styles);
-  const handleDelete = () => deleteTask(task._id);
-  const handleCheck = () => toggleChecked(task._id, task.checked);
-  const handlePrivate = () => togglePrivate(task._id, task.private);
-  const taskClassName = classnames({
-    [classnames.checked]: task.checked,
-    [classnames.private]: task.private
-  });
+const Task = ({ task, showPrivateButton, toggleChecked, togglePrivate, deleteTask }) => (
+  <li
+    className={classnames({
+      [classes.checked]: task.checked,
+      [classes.private]: task.private
+    })}>
+    <button
+      className={classes.delete}
+      onClick={deleteTask.bind(null, task._id)}
+    >
+      &times;
+    </button>
 
-  return (
-    <li className={taskClassName}>
-      <button className={classes.delete} onClick={handleDelete}>&times;</button>
+    <input
+      type="checkbox"
+      readOnly
+      checked={task.checked}
+      onClick={toggleChecked.bind(null, task._id, task.checked)}
+    />
 
-      <input
-        type="checkbox"
-        readOnly
-        checked={task.checked}
-        onClick={handleCheck}
-      />
+    { showPrivateButton ? (
+        <button
+          className={classes.togglePrivate}
+          onClick={togglePrivate.bind(null, task._id, task.private)}
+        >
+          { task.private ? 'Private' : 'Public' }
+        </button>
+    ) : '' }
 
-      { showPrivateButton ? (
-          <button className={classes.togglePrivate} onClick={handlePrivate}>
-            { task.private ? 'Private' : 'Public' }
-          </button>
-      ) : '' }
-
-    <span className={classes.text}>
-      <strong>{task.username}</strong>: { task.text }
-    </span>
-    </li>
-  );
-};
+  <span className={classes.text}>
+    <strong>{task.username}</strong>: { task.text }
+  </span>
+  </li>
+);
 
 Task.propTypes = {
   task: PropTypes.object.isRequired,
@@ -68,5 +69,6 @@ const styles = {
     marginLeft: 5
   }
 };
+const { classes } = Load(styles);
 
 export default Task;

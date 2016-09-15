@@ -5,9 +5,7 @@ import Task from '../containers/task.js';
 import NewTask from '../containers/new_task.js';
 import HideCompleted from '../containers/hide_completed.js';
 
-const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted, showLogIn = false }) => {
-  const { classes } = Load(styles);
-
+const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted, showLogIn }) => {
   const renderTasks = () => {
     let filteredTasks = tasks;
     if (hideCompleted) {
@@ -27,24 +25,21 @@ const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted, showLogI
     });
   };
 
-  const renderLogin = () => {
-    if (showLogIn) {
-      return <LogInButtons />;
-    }
-    return <p>[Login goes here]</p>;
-  };
-
   return (
     <div className={classes.container}>
       <header>
         <h1>Todo List ({incompleteCount})</h1>
         <HideCompleted />
-        {renderLogin()}
+
+        { showLogIn ?
+          <LogInButtons /> :
+          <p>[Login goes here]</p> }
+
         { currentUser ?
           <NewTask /> :
           '' }
-      </header>
 
+      </header>
       <ul>{renderTasks()}</ul>
     </div>
   );
@@ -58,5 +53,6 @@ const styles = {
     background: 'white',
   },
 };
+const { classes } = Load(styles);
 
 export default TaskList;

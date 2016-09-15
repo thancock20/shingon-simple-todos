@@ -16,8 +16,8 @@ describe('core.components.task_list', () => {
     expect(el.find('UseDeps(Container(HideCompleted))').length).to.equal(1);
   });
 
-  it('should display a New Task input', () => {
-    const el = shallow(<TaskList tasks={[]} />);
+  it('should display a New Task input if logged in', () => {
+    const el = shallow(<TaskList tasks={[]} currentUser={true} />);
     expect(el.find('UseDeps(Container(NewTask))').length).to.equal(1);
   });
 
