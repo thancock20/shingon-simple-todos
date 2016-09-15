@@ -20,9 +20,15 @@ describe('core.components.task', () => {
   });
 
   it('should have a delete button', () => {
-    const el = render({text: 'Hello, World!'}, false);
-    expect(el.find('button').props().className).to.contain('delete');
+    const el = render({text: 'Hello, World!'} );
+    expect(el.find('button').nodes[0].props.className).to.contain('delete');
   });
+
+  it('should have a public button', () => {
+    const el = render({text: 'Hello, World!'});
+    expect(el.find('button').nodes[1].props.className).to.contain('togglePrivate');
+    expect(el.find('button').nodes[1].props.children).to.equal('Public');
+  })
 
   it('should have a checkbox', () => {
     const el = render({text: 'Hello, World!'});
