@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Load from 'shingon-load-jss';
 
 class NewTask extends React.Component {
@@ -27,11 +26,11 @@ class NewTask extends React.Component {
     }
 
     const {create} = this.props;
-    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
+    const text = this.refs.textInput.value.trim();
 
     create(text);
 
-    ReactDOM.findDOMNode(this.refs.textInput).value = '';
+    this.refs.textInput.value = '';
   }
 
 }
