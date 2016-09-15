@@ -6,14 +6,75 @@ import Task from '../task.jsx';
 storiesOf('core.Task', module)
   .add('default view', () => {
     const task = {
-      text: 'Hello, World!'
+      text: 'Hello, World!',
+      username: 'John'
     };
 
     return (
       <ul>
         <Task
           task={task}
+          showPrivateButton={true}
+          toggleChecked={() => {}}
+          togglePrivate={() => {}}
+          deleteTask={() => {}}
         />
       </ul>
     );
-  });
+  })
+  .add('checked view', () => {
+    const task = {
+      text: 'Hello, World!',
+      username: 'John',
+      checked: true
+    };
+
+    return (
+      <ul>
+        <Task
+          task={task}
+          showPrivateButton={true}
+          toggleChecked={() => {}}
+          togglePrivate={() => {}}
+          deleteTask={() => {}}
+        />
+      </ul>
+    );
+  })
+  .add('private view', () => {
+    const task = {
+      text: 'Hello, World!',
+      username: 'John',
+      private: true
+    };
+
+    return (
+      <ul>
+        <Task
+          task={task}
+          showPrivateButton={true}
+          toggleChecked={() => {}}
+          togglePrivate={() => {}}
+          deleteTask={() => {}}
+        />
+      </ul>
+    );
+  })
+  .add('non owner view', () => {
+    const task = {
+      text: 'Hello, World!',
+      username: 'John'
+    };
+
+    return (
+      <ul>
+        <Task
+          task={task}
+          showPrivateButton={false}
+          toggleChecked={() => {}}
+          togglePrivate={() => {}}
+          deleteTask={() => {}}
+        />
+      </ul>
+    );
+  })

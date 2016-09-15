@@ -7,7 +7,6 @@ class NewTask extends React.Component {
   }
 
   render() {
-
     return (
       <form onSubmit={this.createTask.bind(this)} >
         <input
