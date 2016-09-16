@@ -9,14 +9,11 @@ export default function () {
         throw new Meteor.Error('not-authorized');
       }
 
-      Tasks.insert({
-        text,
-        checked: false,
-        createdAt: new Date(),
-        owner: this.userId,
-        username: Meteor.users.findOne(this.userId).username,
-        private: false
-      });
+      const task = new Tasks();
+      task.text = text;
+      task.owner = this.userId;
+      task.username = Meteor.users.findOne(this.userId).username;
+      task.save();
     },
 
     'tasks.remove'(taskId) {
@@ -25,7 +22,7 @@ export default function () {
         throw new Meteor.Error('not-authorized');
       }
 
-      Tasks.remove(taskId);
+      task.remove();
     },
 
     'tasks.setChecked'(taskId, setChecked) {
@@ -34,7 +31,8 @@ export default function () {
         throw new Meteor.Error('not-authorized');
       }
 
-      Tasks.update(taskId, { $set: { checked: setChecked } });
+      task.checked = setChecked;
+      task.save();
     },
 
     'tasks.setPrivate'(taskId, setToPrivate) {
@@ -45,7 +43,8 @@ export default function () {
         throw new Meteor.Error('not-authorized');
       }
 
-      Tasks.update(taskId, { $set: { private: setToPrivate } });
+      task.private = setToPrivate;
+      task.save();
     }
   });
 }

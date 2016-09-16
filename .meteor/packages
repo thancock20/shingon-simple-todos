@@ -19,7 +19,7 @@ ecmascript@0.5.8              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.1            # Server-side component of the `meteor shell` command
 
 kadira:flow-router
-aldeed:collection2
 accounts-password
 alt:react-accounts-ui
 accounts-base
+jagi:astronomy@2.0.0
