@@ -14,31 +14,35 @@ const render = (task, showPrivateButton = true) => {
 };
 
 describe('core.components.task', () => {
-  it('should output li element with text inside', () => {
+  it('should render without exploding', () => {
+    expect(render({}).length).to.equal(1);
+  });
+
+  it('should render li element with text inside', () => {
     const el = render({text: 'Hello, World!'});
     expect(el.find('li').text()).to.be.match(/Hello\, World!/);
   });
 
-  it('should have a delete button', () => {
+  it('should render a delete button', () => {
     const el = render({text: 'Hello, World!'} );
-    expect(el.find('button').nodes[0].props.className).to.contain('delete');
+    expect(el.find('button').first().prop('className')).to.contain('delete');
   });
 
-  it('should have a public button normally', () => {
+  it('should render a public button normally', () => {
     const el = render({text: 'Hello, World!'});
-    expect(el.find('button').nodes[1].props.className).to.contain('togglePrivate');
-    expect(el.find('button').nodes[1].props.children).to.equal('Public');
+    expect(el.find('button').last().prop('className')).to.contain('togglePrivate');
+    expect(el.find('button').last().prop('children')).to.equal('Public');
   });
 
-  it('should have a private button when private is true', () => {
+  it('should render a private button when private is true', () => {
     const el = render({text: 'Hello, World!', private: true});
-    expect(el.find('button').nodes[1].props.className).to.contain('togglePrivate');
-    expect(el.find('button').nodes[1].props.children).to.equal('Private');
+    expect(el.find('button').last().prop('className')).to.contain('togglePrivate');
+    expect(el.find('button').last().prop('children')).to.equal('Private');
   });
 
-  it('should have a checkbox', () => {
+  it('should render a checkbox', () => {
     const el = render({text: 'Hello, World!'});
-    expect(el.find('input').props().type).to.equal('checkbox');
-    expect(el.find('input').props().readOnly).to.equal(true);
+    expect(el.find('input').prop('type')).to.equal('checkbox');
+    expect(el.find('input').prop('readOnly')).to.equal(true);
   });
 });
