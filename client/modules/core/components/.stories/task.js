@@ -15,9 +15,6 @@ storiesOf('core.Task', module)
         <Task
           task={task}
           showPrivateButton={true}
-          toggleChecked={() => {}}
-          togglePrivate={() => {}}
-          deleteTask={() => {}}
         />
       </ul>
     );
@@ -34,9 +31,6 @@ storiesOf('core.Task', module)
         <Task
           task={task}
           showPrivateButton={true}
-          toggleChecked={() => {}}
-          togglePrivate={() => {}}
-          deleteTask={() => {}}
         />
       </ul>
     );
@@ -53,9 +47,6 @@ storiesOf('core.Task', module)
         <Task
           task={task}
           showPrivateButton={true}
-          toggleChecked={() => {}}
-          togglePrivate={() => {}}
-          deleteTask={() => {}}
         />
       </ul>
     );
@@ -71,10 +62,7 @@ storiesOf('core.Task', module)
         <Task
           task={task}
           showPrivateButton={false}
-          toggleChecked={() => {}}
-          togglePrivate={() => {}}
-          deleteTask={() => {}}
         />
       </ul>
     );
-  })
+  });
