@@ -4,5 +4,80 @@ import {spy, stub} from 'sinon';
 import actions from '../tasks';
 
 describe('core.actions.tasks', () => {
-  it('should do something');
+  describe('create', () => {
+    it('should call Meteor.call to save the task', () => {
+      const Meteor = {call: spy()};
+
+      actions.create({Meteor}, 'Hello, World!');
+      const methodArgs = Meteor.call.args[0];
+
+      expect(methodArgs.slice(0, 2)).to.deep.equal([
+        'tasks.insert', 'Hello, World!'
+      ]);
+    });
+  });
+
+  describe('toggleChecked', () => {
+    it('should call Meteor.call to toggle the task\s checked flag', () => {
+      const Meteor = {call: spy()};
+
+      actions.toggleChecked({Meteor}, 'abc123', true);
+      const methodArgs = Meteor.call.args[0];
+
+      expect(methodArgs.slice(0, 3)).to.deep.equal([
+        'tasks.setChecked', 'abc123', false
+      ]);
+    });
+  });
+
+  describe('togglePrivate', () => {
+    it('should call Meteor.call to toggle the task\'s private flag', () => {
+      const Meteor = {call: spy()};
+
+      actions.togglePrivate({Meteor}, 'abc123', true);
+      const methodArgs = Meteor.call.args[0];
+
+      expect(methodArgs.slice(0, 3)).to.deep.equal([
+        'tasks.setPrivate', 'abc123', false
+      ]);
+    });
+  });
+
+  describe('deleteTask', () => {
+    it('should call Meteor.call to delete the task', () => {
+      const Meteor = {call: spy()};
+
+      actions.deleteTask({Meteor}, 'abc123');
+      const methodArgs = Meteor.call.args[0];
+
+      expect(methodArgs.slice(0, 2)).to.deep.equal([
+        'tasks.remove', 'abc123'
+      ]);
+    });
+  });
+
+  describe('toggleHideCompleted', () => {
+    it('should get hideCompleted from LocalState', () => {
+      const LocalState = {get: spy(), set: stub()};
+
+      actions.toggleHideCompleted({LocalState});
+      const methodArgs = LocalState.get.args[0];
+
+      expect(methodArgs.slice(0, 1)).to.deep.equal([
+        'hideCompleted'
+      ]);
+    });
+
+    it('should set hideCompleted in LocalState', () => {
+      const LocalState = {get: stub(), set: spy()};
+      LocalState.get.returns(true);
+
+      actions.toggleHideCompleted({LocalState});
+      const methodArgs = LocalState.set.args[0];
+
+      expect(methodArgs.slice(0, 2)).to.deep.equal([
+        'hideCompleted', false
+      ]);
+    });
+  });
 });
