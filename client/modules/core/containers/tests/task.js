@@ -1,7 +1,7 @@
 const {describe, it} = global;
 import {expect} from 'chai';
 import {stub, spy} from 'sinon';
-import {composer} from '../task';
+import {composer, depsMapper} from '../task';
 
 describe('core.containers.task', () => {
   describe('composer', () => {
@@ -15,6 +15,61 @@ describe('core.containers.task', () => {
 //      return Collections;
 //    };
 
-    it('should do something');
+    it('should call onData with no data', () => {
+      const Meteor = {};
+      const Collections = {};
+
+      const context = () => ({Meteor, Collections});
+      const onData = spy();
+
+      composer({context}, onData);
+      expect(onData.args[0]).to.deep.equal([ null, {} ]);
+    });
+  });
+
+  describe('depsMapper', () => {
+    describe('actions', () => {
+      it('should map toggleChecked to actions', () => {
+        const actions = {
+          tasks: {
+            toggleChecked: spy(),
+            togglePrivate: spy(),
+            deleteTask: spy()
+          }
+        };
+
+        const deps = depsMapper({}, actions);
+
+        expect(deps.toggleChecked).to.equal(actions.tasks.toggleChecked);
+      });
+
+      it('should map togglePrivate to actions', () => {
+        const actions = {
+          tasks: {
+            toggleChecked: spy(),
+            togglePrivate: spy(),
+            deleteTask: spy()
+          }
+        };
+
+        const deps = depsMapper({}, actions);
+
+        expect(deps.togglePrivate).to.equal(actions.tasks.togglePrivate);
+      });
+
+      it('should map deleteTask to actions', () => {
+        const actions = {
+          tasks: {
+            toggleChecked: spy(),
+            togglePrivate: spy(),
+            deleteTask: spy()
+          }
+        };
+
+        const deps = depsMapper({}, actions);
+
+        expect(deps.deleteTask).to.equal(actions.tasks.deleteTask);
+      });
+    });
   });
 });
