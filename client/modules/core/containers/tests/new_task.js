@@ -1,9 +1,23 @@
 const {describe, it} = global;
 import {expect} from 'chai';
 import {stub, spy} from 'sinon';
-import {depsMapper} from '../new_task';
+import {composer, depsMapper} from '../new_task';
 
 describe('core.containers.new_task', () => {
+  describe('composer', () => {
+    it('should call onData with no data', () => {
+      const Meteor = {};
+      const Collections = {};
+      const context = () => ({Meteor, Collections});
+
+      const onData = spy();
+
+      composer({context}, onData);
+
+      expect(onData.args[0]).to.deep.equal([ null, {} ]);
+    });
+  });
+
   describe('depsMapper', () => {
     describe('actions', () => {
       it('should map tasks.create', () => {
