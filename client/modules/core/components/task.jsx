@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Load from 'shingon-load-jss';
 import classnames from 'classnames';
 
-const Task = ({ task, showPrivateButton, toggleChecked, togglePrivate, deleteTask }) => {
+const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
   const handleDelete = () => deleteTask(task._id);
   const handleChecked = () => toggleChecked(task._id, task.checked);
   const handlePrivate = () => togglePrivate(task._id, task.private);
@@ -27,13 +27,13 @@ const Task = ({ task, showPrivateButton, toggleChecked, togglePrivate, deleteTas
         onClick={handleChecked}
       />
 
-      { showPrivateButton ? (
-          <button
-            className={classes.togglePrivate}
-            onClick={handlePrivate}
-          >
-            { task.private ? 'Private' : 'Public' }
-          </button>
+      { task.isOwner ? (
+        <button
+          className={classes.togglePrivate}
+          onClick={handlePrivate}
+        >
+          { task.private ? 'Private' : 'Public' }
+        </button>
       ) : '' }
 
     <span className={classes.text}>
