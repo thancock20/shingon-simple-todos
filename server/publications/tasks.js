@@ -9,6 +9,7 @@ export default function () {
         { private: { $ne: true } },
         { owner: this.userId }
       ]
-    });
+    }, Tasks.publish
+);
   });
 }
