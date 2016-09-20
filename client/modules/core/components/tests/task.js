@@ -4,17 +4,6 @@ import {shallow} from 'enzyme';
 import {spy} from 'sinon';
 import Task from '../task';
 
-const render = (task, showPrivateButton = true) => {
-  return (shallow(<Task
-    task={task}
-    showPrivateButton={showPrivateButton}
-    // toggleChecked={() => {}}
-    // togglePrivate={() => {}}
-    // deleteTask={() => {}}
-    />)
-  );
-};
-
 describe('core.components.task', () => {
   it('should render without exploding', () => {
     const task = {};
@@ -34,15 +23,15 @@ describe('core.components.task', () => {
   });
 
   it('should render a public button normally', () => {
-    const task = {text: 'Hello, World!'};
-    const el = shallow(<Task task={task} showPrivateButton={true} />);
+    const task = {text: 'Hello, World!', isOwner: true};
+    const el = shallow(<Task task={task} />);
     expect(el.find('button').last().prop('className')).to.contain('togglePrivate');
     expect(el.find('button').last().prop('children')).to.equal('Public');
   });
 
   it('should render a private button when private is true', () => {
-    const task = {text: 'Hello, World!', private: true};
-    const el = shallow(<Task task={task} showPrivateButton={true} />);
+    const task = {text: 'Hello, World!', private: true, isOwner: true};
+    const el = shallow(<Task task={task} />);
     expect(el.find('button').last().prop('className')).to.contain('togglePrivate');
     expect(el.find('button').last().prop('children')).to.equal('Private');
   });
@@ -69,8 +58,8 @@ describe('core.components.task', () => {
 
   it('should call togglePrivate when private button clicked', () => {
     const togglePrivate = spy();
-    const task = {_id: 'abc123', private: true};
-    const el = shallow(<Task task={task} togglePrivate={togglePrivate} showPrivateButton={true} />);
+    const task = {_id: 'abc123', private: true, isOwner: true};
+    const el = shallow(<Task task={task} togglePrivate={togglePrivate} />);
 
     el.find('button').last().simulate('click');
     const methodArgs = togglePrivate.args[0];

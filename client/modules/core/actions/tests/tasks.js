@@ -12,7 +12,7 @@ describe('core.actions.tasks', () => {
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 2)).to.deep.equal([
-        'tasks.insert', 'Hello, World!'
+        'tasks.create', {text: 'Hello, World!'}
       ]);
     });
   });
@@ -25,7 +25,7 @@ describe('core.actions.tasks', () => {
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 3)).to.deep.equal([
-        'tasks.setChecked', 'abc123', false
+        'tasks.update', 'abc123', {checked: false}
       ]);
     });
   });
@@ -38,7 +38,7 @@ describe('core.actions.tasks', () => {
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 3)).to.deep.equal([
-        'tasks.setPrivate', 'abc123', false
+        'tasks.update', 'abc123', {private: false}
       ]);
     });
   });
@@ -51,7 +51,7 @@ describe('core.actions.tasks', () => {
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 2)).to.deep.equal([
-        'tasks.remove', 'abc123'
+        'tasks.delete', 'abc123'
       ]);
     });
   });
