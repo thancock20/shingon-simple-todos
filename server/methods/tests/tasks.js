@@ -1,8 +1,5 @@
-/*
-  global
-  describe it expect before
-  ddp meteor Accounts
-*/
+/* eslint-env mocha, meteor */
+/* global meteor, ddp, expect */
 
 describe('tasks', () => {
   const server = meteor({flavor: 'fiber'});
