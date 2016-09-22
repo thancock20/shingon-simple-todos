@@ -1,6 +1,7 @@
 const {describe, it} = global;
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
+import {spy} from 'sinon';
 import NewTask from '../new_task';
 
 describe('core.components.new_task', () => {
@@ -8,12 +9,17 @@ describe('core.components.new_task', () => {
     expect(shallow(<NewTask />).length).to.equal(1);
   });
 
-  it('should render the text input', () => {
-    const el = shallow(<NewTask />);
-    const input = el.find('input');
-    expect(input.node.ref).to.equal('textInput');
-    expect(input.prop('className')).to.contain('newTask');
-    expect(input.prop('type')).to.equal('text');
-    expect(input.prop('placeholder')).to.equal('Type to add new tasks');
+  it('should call setInput when value changes', () => {
+    const setInput = spy();
+    const el = shallow(<NewTask setInput={setInput} />);
+    el.find('input').simulate('change', {target: {value: 'Hello, World!'}});
+    expect(setInput.called).to.equal(true);
+  });
+
+  it('should call create  when form submitted', () => {
+    const create = spy();
+    const el = shallow(<NewTask create={create} />);
+    el.find('form').simulate('submit');
+    expect(create.called).to.equal(true);
   });
 });

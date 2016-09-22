@@ -5,16 +5,18 @@ import {composer, depsMapper} from '../new_task';
 
 describe('core.containers.new_task', () => {
   describe('composer', () => {
-    it('should call onData with no data', () => {
+    it('should call onData with taskInput from LocalState', () => {
       const Meteor = {};
       const Collections = {};
-      const context = () => ({Meteor, Collections});
+      const LocalState = {get: stub()};
+      LocalState.get.returns('Hello, World!');
+      const context = () => ({Meteor, LocalState, Collections});
 
       const onData = spy();
 
       composer({context}, onData);
 
-      expect(onData.args[0]).to.deep.equal([ null, {} ]);
+      expect(onData.args[0]).to.deep.equal([ null, {taskInput: 'Hello, World!'} ]);
     });
   });
 

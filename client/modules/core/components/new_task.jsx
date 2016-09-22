@@ -1,38 +1,30 @@
 import React from 'react';
 import Load from 'shingon-load-jss';
 
-class NewTask extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.createTask.bind(this)} >
-        <input
-          className={classes.newTask}
-          type="text"
-          ref="textInput"
-          placeholder="Type to add new tasks"
-        />
-      </form>
-    );
-  }
-
-  createTask(event) {
+const NewTask = ({taskInput, create, setInput}) => {
+  const handleSubmit = (event) => {
     if (event && event.preventDefault) {
       event.preventDefault();
     }
+    create(taskInput);
+  };
 
-    const {create} = this.props;
-    const text = this.refs.textInput.value.trim();
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
 
-    create(text);
-
-    this.refs.textInput.value = '';
-  }
-
-}
+  return (
+    <form onSubmit={handleSubmit} >
+      <input
+        onChange={handleChange}
+        className={classes.newTask}
+        type="text"
+        value={taskInput}
+        placeholder="Type to add new tasks"
+      />
+    </form>
+  );
+};
 
 const styles = {
   newTask: {

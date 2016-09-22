@@ -1,6 +1,11 @@
 export default {
-  create({Meteor}, text) {
+  create({Meteor, LocalState}, text) {
     Meteor.call('tasks.create', {text});
+    LocalState.set('taskInput', '');
+  },
+
+  setInput({LocalState}, text) {
+    LocalState.set('taskInput', text);
   },
 
   toggleChecked({Meteor}, taskId, checked) {

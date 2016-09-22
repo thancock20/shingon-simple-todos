@@ -7,12 +7,38 @@ describe('core.actions.tasks', () => {
   describe('create', () => {
     it('should call Meteor.call to save the task', () => {
       const Meteor = {call: spy()};
+      const LocalState = {set: spy()};
 
-      actions.create({Meteor}, 'Hello, World!');
+      actions.create({Meteor, LocalState}, 'Hello, World!');
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 2)).to.deep.equal([
         'tasks.create', {text: 'Hello, World!'}
+      ]);
+    });
+
+    it('should set taskInput in localState', () => {
+      const Meteor = {call: spy()};
+      const LocalState = {set: spy()};
+
+      actions.create({Meteor, LocalState}, 'Hello, World!');
+      const methodArgs = LocalState.set.args[0];
+
+      expect(methodArgs.slice(0, 2)).to.deep.equal([
+        'taskInput', ''
+      ]);
+    });
+  });
+
+  describe('setInput', () => {
+    it('should set taskInput in LocalState', () => {
+      const LocalState = {set: spy()};
+
+      actions.setInput({LocalState}, 'Hello, World!');
+      const methodArgs = LocalState.set.args[0];
+
+      expect(methodArgs.slice(0, 2)).to.deep.equal([
+        'taskInput', 'Hello, World!'
       ]);
     });
   });

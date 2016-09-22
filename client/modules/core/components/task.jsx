@@ -36,9 +36,9 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
         </button>
       ) : '' }
 
-    <span className={classes.text}>
-      <strong>{task.username}</strong>: { task.text }
-    </span>
+      <span className={classes.text}>
+        <strong>{task.username}</strong>: { task.text }
+      </span>
     </li>
   );
 };
