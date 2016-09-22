@@ -10,39 +10,6 @@ describe('core.components.task', () => {
     expect(shallow(<Task task={task} />).length).to.equal(1);
   });
 
-  it('should render li element with text inside', () => {
-    const task = {text: 'Hello, World!'};
-    const el = shallow(<Task task={task} />);
-    expect(el.find('li').text()).to.be.match(/Hello\, World!/);
-  });
-
-  it('should render a delete button', () => {
-    const task = {text: 'Hello, World!'};
-    const el = shallow(<Task task={task} />);
-    expect(el.find('button').first().prop('className')).to.contain('delete');
-  });
-
-  it('should render a public button normally', () => {
-    const task = {text: 'Hello, World!', isOwner: true};
-    const el = shallow(<Task task={task} />);
-    expect(el.find('button').last().prop('className')).to.contain('togglePrivate');
-    expect(el.find('button').last().prop('children')).to.equal('Public');
-  });
-
-  it('should render a private button when private is true', () => {
-    const task = {text: 'Hello, World!', private: true, isOwner: true};
-    const el = shallow(<Task task={task} />);
-    expect(el.find('button').last().prop('className')).to.contain('togglePrivate');
-    expect(el.find('button').last().prop('children')).to.equal('Private');
-  });
-
-  it('should render a checkbox', () => {
-    const task = {text: 'Hello, World!'};
-    const el = shallow(<Task task={task} />);
-    expect(el.find('input').prop('type')).to.equal('checkbox');
-    expect(el.find('input').prop('readOnly')).to.equal(true);
-  });
-
   it('should call toggleChecked when checkbox clicked', () => {
     const toggleChecked = spy();
     const task = {_id: 'abc123', checked: true};

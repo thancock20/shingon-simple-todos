@@ -71,6 +71,6 @@ describe('core.containers.task_list', () => {
       const deps = depsMapper(context, actions);
 
       expect(deps.context()).to.be.equal(context);
-    })
-  })
+    });
+  });
 });

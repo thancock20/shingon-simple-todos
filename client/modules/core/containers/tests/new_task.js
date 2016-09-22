@@ -29,6 +29,14 @@ describe('core.containers.new_task', () => {
 
         expect(deps.create).to.be.equal(actions.tasks.create);
       });
+
+      it('should map tasks.setInput', () => {
+        const actions = {tasks: {setInput: spy()}};
+
+        const deps = depsMapper({}, actions);
+
+        expect(deps.setInput).to.be.equal(actions.tasks.setInput);
+      });
     });
 
     describe('context', () => {
