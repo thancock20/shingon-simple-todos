@@ -7,14 +7,14 @@ storiesOf('core.Task', module)
   .add('default view', () => {
     const task = {
       text: 'Hello, World!',
-      username: 'John'
+      username: 'John',
+      isOwner: true
     };
 
     return (
       <ul>
         <Task
           task={task}
-          showPrivateButton={true}
         />
       </ul>
     );
@@ -23,14 +23,14 @@ storiesOf('core.Task', module)
     const task = {
       text: 'Hello, World!',
       username: 'John',
-      checked: true
+      checked: true,
+      isOwner: true
     };
 
     return (
       <ul>
         <Task
           task={task}
-          showPrivateButton={true}
         />
       </ul>
     );
@@ -39,14 +39,14 @@ storiesOf('core.Task', module)
     const task = {
       text: 'Hello, World!',
       username: 'John',
-      private: true
+      private: true,
+      isOwner: true
     };
 
     return (
       <ul>
         <Task
           task={task}
-          showPrivateButton={true}
         />
       </ul>
     );
@@ -61,7 +61,6 @@ storiesOf('core.Task', module)
       <ul>
         <Task
           task={task}
-          showPrivateButton={false}
         />
       </ul>
     );
