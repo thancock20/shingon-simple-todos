@@ -9,7 +9,8 @@ import HideCompleted from '../../containers/hide_completed';
 setComposerStub(NewTask, (props) => {
   const data = {
     ...props,
-    create: () => {}
+    create: () => {},
+    setInput: () => {}
   };
 
   return data;
@@ -38,12 +39,12 @@ setComposerStub(HideCompleted, (props) => {
 storiesOf('core.TaskList', module)
   .add('default view', () => {
     const tasks = [
-      { _id: 1, text: 'This is task 1', username: 'John' },
-      { _id: 2, text: 'This is task 2', username: 'John' },
-      { _id: 3, text: 'This is task 3', username: 'John' }
+      { _id: 1, text: 'This is task 1', username: 'John', isOwner: true },
+      { _id: 2, text: 'This is task 2', username: 'John', isOwner: true, private: true },
+      { _id: 3, text: 'This is task 3', username: 'Bob', checked: true }
     ];
 
     return (
-      <TaskList tasks={tasks} incompleteCount={3} />
+      <TaskList tasks={tasks} currentUser={true} incompleteCount={3} />
     );
   });
