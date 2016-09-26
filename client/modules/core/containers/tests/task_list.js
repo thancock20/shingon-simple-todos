@@ -23,8 +23,8 @@ describe('core.containers.task_list', () => {
       LocalState.get.returns(true);
 
       const tasks = [ {_id: 'abc123'} ];
-      const Collections = {Tasks: {find: stub()}};
-      Collections.Tasks.find.returns({fetch: () => tasks, count: () => 1});
+      const Collections = {Task: {find: stub()}};
+      Collections.Task.find.returns({fetch: () => tasks, count: () => 1});
 
       const context = () => ({Meteor, LocalState, Collections});
       const onData = spy();
@@ -44,8 +44,8 @@ describe('core.containers.task_list', () => {
       LocalState.get.returns(true);
 
       const tasks = [ {_id: 'abc123'} ];
-      const Collections = {Tasks: {find: stub()}};
-      Collections.Tasks.find.returns({fetch: () => tasks, count: () => 1});
+      const Collections = {Task: {find: stub()}};
+      Collections.Task.find.returns({fetch: () => tasks, count: () => 1});
 
       const context = () => ({Meteor, LocalState, Collections});
       const onData = spy();
