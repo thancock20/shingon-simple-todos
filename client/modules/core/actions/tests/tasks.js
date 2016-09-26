@@ -51,7 +51,7 @@ describe('core.actions.tasks', () => {
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 3)).to.deep.equal([
-        'tasks.update', 'abc123', {checked: false}
+        'tasks.edit', 'abc123', {checked: false}
       ]);
     });
   });
@@ -64,7 +64,7 @@ describe('core.actions.tasks', () => {
       const methodArgs = Meteor.call.args[0];
 
       expect(methodArgs.slice(0, 3)).to.deep.equal([
-        'tasks.update', 'abc123', {private: false}
+        'tasks.edit', 'abc123', {private: false}
       ]);
     });
   });

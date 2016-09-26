@@ -11,12 +11,12 @@ export default function ({Meteor, Collections}) {
       task.create(taskToInsert);
     },
 
-    'tasks.update'(taskId, updates) {
+    'tasks.edit'(taskId, updates) {
       check(taskId, String);
       check(updates, Object);
 
       const task = Tasks.findOne(taskId);
-      task.update(updates);
+      task.edit(updates);
     },
 
     'tasks.delete'(taskId) {

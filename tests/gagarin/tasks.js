@@ -31,14 +31,14 @@ describe('tasks', () => {
     });
   });
 
-  describe('tasks.update', () => {
+  describe('tasks.edit', () => {
     it('should change the checked field', () => {
       var tasks = client.collection('tasks');
       const id = Object.keys(tasks)[0];
 
       expect(tasks[id].checked).to.equal(false);
 
-      client.call('tasks.update', [ id, {checked: true} ]);
+      client.call('tasks.edit', [ id, {checked: true} ]);
       client.sleep(200);
       tasks = client.collection('tasks');
 
@@ -51,7 +51,7 @@ describe('tasks', () => {
 
       expect(tasks[id].private).to.equal(false);
 
-      client.call('tasks.update', [ id, {private: true} ]);
+      client.call('tasks.edit', [ id, {private: true} ]);
       client.sleep(200);
       tasks = client.collection('tasks');
 
