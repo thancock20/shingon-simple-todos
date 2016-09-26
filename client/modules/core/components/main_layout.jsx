@@ -8,7 +8,10 @@ Load(styles, 'global');
 const Layout = ({content = () => null }) => (
   <div>
     <Helmet
-      Title="Todo List"
+      title="Todo List"
+      meta={[
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+      ]}
     />
     <div>
       {content()}
