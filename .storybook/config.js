@@ -4,7 +4,7 @@ import { setStubbingMode } from 'react-komposer';
 setStubbingMode(true);
 
 import styles from '../client/styles/index';
-import Load from 'shingon-load-jss';
+import Load from '/lib/load-jss';
 Load(styles, 'global');
 
 function loadStories() {

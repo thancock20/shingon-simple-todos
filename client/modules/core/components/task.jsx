@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Load from 'shingon-load-jss';
+import Load from '/lib/load-jss';
 import classnames from 'classnames';
 
 const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {

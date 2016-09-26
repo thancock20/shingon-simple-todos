@@ -1,5 +1,5 @@
 import React from 'react';
-import Load from 'shingon-load-jss';
+import Load from '/lib/load-jss';
 
 const NewTask = ({taskInput, create, setInput}) => {
   const handleSubmit = (event) => {

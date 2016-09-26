@@ -1,7 +1,7 @@
 import {Task} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
-import getUnpublishedFields from '/lib/getUnpublishedFields';
+import getUnpublishedFields from '/lib/get-unpublished-fields';
 
 export default function () {
   Meteor.publish('tasks', function () {
