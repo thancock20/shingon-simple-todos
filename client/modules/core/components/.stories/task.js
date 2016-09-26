@@ -8,6 +8,7 @@ storiesOf('core.Task', module)
     const task = {
       text: 'Hello, World!',
       username: 'John',
+      checked: false,
       isOwner: true
     };
 
@@ -39,6 +40,7 @@ storiesOf('core.Task', module)
     const task = {
       text: 'Hello, World!',
       username: 'John',
+      checked: false,
       private: true,
       isOwner: true
     };
@@ -54,7 +56,9 @@ storiesOf('core.Task', module)
   .add('non owner view', () => {
     const task = {
       text: 'Hello, World!',
-      username: 'John'
+      username: 'John',
+      checked: false,
+      isOwner: false
     };
 
     return (

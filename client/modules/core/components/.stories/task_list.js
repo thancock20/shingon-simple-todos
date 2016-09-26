@@ -30,6 +30,7 @@ setComposerStub(Task, (props) => {
 setComposerStub(HideCompleted, (props) => {
   const data = {
     ...props,
+    hideCompleted: false,
     toggleHideCompleted: () => {}
   };
 
@@ -39,12 +40,31 @@ setComposerStub(HideCompleted, (props) => {
 storiesOf('core.TaskList', module)
   .add('default view', () => {
     const tasks = [
-      { _id: 1, text: 'This is task 1', username: 'John', isOwner: true },
-      { _id: 2, text: 'This is task 2', username: 'John', isOwner: true, private: true },
-      { _id: 3, text: 'This is task 3', username: 'Bob', checked: true }
-    ];
+      {
+        _id: 1,
+        text: 'This is task 1',
+        username: 'John',
+        checked: false,
+        isOwner: true
+      }, {
+        _id: 2,
+        text: 'This is task 2',
+        username: 'John',
+        checked: false,
+        isOwner: true,
+        private: true
+      }, {
+        _id: 3,
+        text: 'This is task 3',
+        username: 'Bob',
+        checked: true
+      } ];
 
     return (
-      <TaskList tasks={tasks} currentUser={true} incompleteCount={3} />
+      <TaskList
+        tasks={tasks}
+        currentUser={true}
+        incompleteCount={3}
+      />
     );
   });
