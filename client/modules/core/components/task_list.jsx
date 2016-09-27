@@ -49,6 +49,6 @@ const styles = {
     background: 'white',
   },
 };
-const { classes } = Load(styles);
+const classes = Load(styles);
 
 export default TaskList;

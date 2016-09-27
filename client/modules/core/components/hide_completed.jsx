@@ -18,6 +18,6 @@ const styles = {
     float: 'right'
   }
 };
-const { classes } = Load(styles);
+const classes = Load(styles);
 
 export default HideCompleted;

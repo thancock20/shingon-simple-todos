@@ -75,6 +75,6 @@ const styles = {
     marginLeft: 5
   }
 };
-const { classes } = Load(styles);
+const classes = Load(styles);
 
 export default Task;

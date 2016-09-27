@@ -40,6 +40,6 @@ const styles = {
     }
   }
 };
-const { classes } = Load(styles);
+const classes = Load(styles);
 
 export default NewTask;
