@@ -1,5 +1,5 @@
 import React from 'react';
-import Load from '/lib/load-jss';
+import Load from '/lib/load_jss';
 
 const HideCompleted = ({ hideCompleted, toggleHideCompleted }) => (
   <label className={classes.hideCompleted}>

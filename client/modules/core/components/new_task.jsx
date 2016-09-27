@@ -1,5 +1,5 @@
 import React from 'react';
-import Load from '/lib/load-jss';
+import Load from '/lib/load_jss';
 
 const NewTask = ({taskInput, create, setInput}) => {
   const handleSubmit = (event) => {
