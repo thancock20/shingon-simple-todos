@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import styles from '../../../styles/index.js';
+import styles from '/client/styles/index';
 import Load from '/lib/load_jss';
 Load(styles, 'global');
 
