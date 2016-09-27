@@ -3,7 +3,7 @@ import { setStubbingMode } from 'react-komposer';
 
 setStubbingMode(true);
 
-import styles from '../client/styles/index';
+import styles from '/client/styles/index';
 import Load from '/lib/load_jss';
 Load(styles, 'global');
 
