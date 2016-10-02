@@ -1,0 +1,109 @@
+exports[`default view`] = `
+<div
+  className="container-264243677">
+  <header>
+    <h1>
+      Todo List (
+      3
+      )
+    </h1>
+    <label
+      className="hideCompleted-1605513253">
+      <input
+        checked={false}
+        onClick={[Function toggleHideCompleted]}
+        readOnly={true}
+        type="checkbox" />
+      Hide Completed Tasks
+    </label>
+    <p>
+      [Login goes here]
+    </p>
+    <form
+      onSubmit={[Function handleSubmit]}>
+      <input
+        className="newTask-2969458108"
+        onChange={[Function handleChange]}
+        placeholder="Type to add new tasks"
+        type="text"
+        value={undefined} />
+    </form>
+  </header>
+  <ul>
+    <li
+      className="">
+      <button
+        className="delete-236010562"
+        onClick={[Function handleDelete]}>
+        ×
+      </button>
+      <input
+        checked={false}
+        onClick={[Function handleChecked]}
+        readOnly={true}
+        type="checkbox" />
+      <button
+        className="togglePrivate-2867110634"
+        onClick={[Function handlePrivate]}>
+        Public
+      </button>
+      <span
+        className="text-2780870173">
+        <strong>
+          John
+        </strong>
+        : 
+        This is task 1
+      </span>
+    </li>
+    <li
+      className="private-1016974033">
+      <button
+        className="delete-236010562"
+        onClick={[Function handleDelete]}>
+        ×
+      </button>
+      <input
+        checked={false}
+        onClick={[Function handleChecked]}
+        readOnly={true}
+        type="checkbox" />
+      <button
+        className="togglePrivate-2867110634"
+        onClick={[Function handlePrivate]}>
+        Private
+      </button>
+      <span
+        className="text-2780870173">
+        <strong>
+          John
+        </strong>
+        : 
+        This is task 2
+      </span>
+    </li>
+    <li
+      className="checked-4000425453">
+      <button
+        className="delete-236010562"
+        onClick={[Function handleDelete]}>
+        ×
+      </button>
+      <input
+        checked={true}
+        onClick={[Function handleChecked]}
+        readOnly={true}
+        type="checkbox" />
+      
+      <span
+        className="text-2780870173">
+        <strong>
+          Bob
+        </strong>
+        : 
+        This is task 3
+      </span>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,119 @@
+exports[`checked view`] = `
+<ul>
+  <li
+    className="checked-4000425453">
+    <button
+      className="delete-236010562"
+      onClick={[Function handleDelete]}>
+      ×
+    </button>
+    <input
+      checked={true}
+      onClick={[Function handleChecked]}
+      readOnly={true}
+      type="checkbox" />
+    <button
+      className="togglePrivate-2867110634"
+      onClick={[Function handlePrivate]}>
+      Public
+    </button>
+    <span
+      className="text-2780870173">
+      <strong>
+        John
+      </strong>
+      : 
+      Hello, World!
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`default view`] = `
+<ul>
+  <li
+    className="">
+    <button
+      className="delete-236010562"
+      onClick={[Function handleDelete]}>
+      ×
+    </button>
+    <input
+      checked={false}
+      onClick={[Function handleChecked]}
+      readOnly={true}
+      type="checkbox" />
+    <button
+      className="togglePrivate-2867110634"
+      onClick={[Function handlePrivate]}>
+      Public
+    </button>
+    <span
+      className="text-2780870173">
+      <strong>
+        John
+      </strong>
+      : 
+      Hello, World!
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`non owner view`] = `
+<ul>
+  <li
+    className="">
+    <button
+      className="delete-236010562"
+      onClick={[Function handleDelete]}>
+      ×
+    </button>
+    <input
+      checked={false}
+      onClick={[Function handleChecked]}
+      readOnly={true}
+      type="checkbox" />
+    
+    <span
+      className="text-2780870173">
+      <strong>
+        John
+      </strong>
+      : 
+      Hello, World!
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`private view`] = `
+<ul>
+  <li
+    className="private-1016974033">
+    <button
+      className="delete-236010562"
+      onClick={[Function handleDelete]}>
+      ×
+    </button>
+    <input
+      checked={false}
+      onClick={[Function handleChecked]}
+      readOnly={true}
+      type="checkbox" />
+    <button
+      className="togglePrivate-2867110634"
+      onClick={[Function handlePrivate]}>
+      Private
+    </button>
+    <span
+      className="text-2780870173">
+      <strong>
+        John
+      </strong>
+      : 
+      Hello, World!
+    </span>
+  </li>
+</ul>
+`;

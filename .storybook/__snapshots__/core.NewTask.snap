@@ -1,0 +1,11 @@
+exports[`default view`] = `
+<form
+  onSubmit={[Function handleSubmit]}>
+  <input
+    className="newTask-2969458108"
+    onChange={[Function handleChange]}
+    placeholder="Type to add new tasks"
+    type="text"
+    value={undefined} />
+</form>
+`;
