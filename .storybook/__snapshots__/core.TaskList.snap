@@ -11,7 +11,7 @@ exports[`default view`] = `
       className="hideCompleted-1605513253">
       <input
         checked={false}
-        onClick={[Function toggleHideCompleted]}
+        onClick={[Function anonymous]}
         readOnly={true}
         type="checkbox" />
       Hide Completed Tasks

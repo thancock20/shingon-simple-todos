@@ -6,6 +6,6 @@ import NewTask from '../new_task.jsx';
 storiesOf('core.NewTask', module)
   .add('default view', () => {
     return (
-      <NewTask />
+      <NewTask create={action('submitted')} setInput={action('changed')}/>
     );
   });
