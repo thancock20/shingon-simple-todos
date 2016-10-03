@@ -4,9 +4,9 @@ import Load from '/lib/load_jss';
 import Task from '../containers/task.js';
 import NewTask from '../containers/new_task.js';
 import HideCompleted from '../containers/hide_completed.js';
-import LogInButtons from '../containers/log_in_buttons';
+import LogInButtons from './log_in_buttons.jsx';
 
-const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted, showLogIn }) => {
+const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted }) => {
   const renderTasks = () => {
     let filteredTasks = tasks;
     if (hideCompleted) {

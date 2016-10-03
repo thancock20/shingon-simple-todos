@@ -5,7 +5,6 @@ import TaskList from '../task_list.jsx';
 import NewTask from '../../containers/new_task';
 import Task from '../../containers/task.js';
 import HideCompleted from '../../containers/hide_completed';
-import LogInButtons from '../../containers/log_in_buttons';
 
 setComposerStub(NewTask, (props) => {
   const data = {
@@ -33,14 +32,6 @@ setComposerStub(HideCompleted, (props) => {
     ...props,
     hideCompleted: false,
     toggleHideCompleted: action('hide-completed-toggled')
-  };
-
-  return data;
-});
-
-setComposerStub(LogInButtons, (props) => {
-  const data = {
-    ...props,
   };
 
   return data;

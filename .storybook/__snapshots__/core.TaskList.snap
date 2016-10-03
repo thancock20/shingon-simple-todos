@@ -16,9 +16,11 @@ exports[`default view`] = `
         type="checkbox" />
       Hide Completed Tasks
     </label>
-    <p>
-      [Login goes here]
-    </p>
+    <div>
+      <p>
+        [Login goes here]
+      </p>
+    </div>
     <form
       onSubmit={[Function handleSubmit]}>
       <input
