@@ -6,6 +6,6 @@ import HideCompleted from '../hide_completed.jsx';
 storiesOf('core.HideCompleted', module)
   .add('default view', () => {
     return (
-      <HideCompleted />
+      <HideCompleted toggleHideCompleted={action('clicked')}/>
     );
   });

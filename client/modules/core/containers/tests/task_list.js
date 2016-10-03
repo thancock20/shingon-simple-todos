@@ -53,12 +53,11 @@ describe('core.containers.task_list', () => {
       const incompleteCount = 1;
       const currentUser = 'Bob';
       const hideCompleted = true;
-      const showLogIn = true;
 
       composer({context}, onData);
       const args = onData.args[0];
       expect(args).to.deep.equal([
-        null, {tasks, incompleteCount, currentUser, hideCompleted, showLogIn}
+        null, {tasks, incompleteCount, currentUser, hideCompleted}
       ]);
     });
   });

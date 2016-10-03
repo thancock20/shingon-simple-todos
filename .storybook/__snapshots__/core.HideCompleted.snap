@@ -1,0 +1,11 @@
+exports[`default view`] = `
+<label
+  className="hideCompleted-1605513253">
+  <input
+    checked={undefined}
+    onClick={[Function anonymous]}
+    readOnly={true}
+    type="checkbox" />
+  Hide Completed Tasks
+</label>
+`;
