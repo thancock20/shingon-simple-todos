@@ -24,8 +24,8 @@ const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted }) => {
 
   return (
     <div className={classes.container}>
-      <header>
-        <h1>Todo List ({incompleteCount})</h1>
+      <header className={classes.header}>
+        <h1 className={classes.h1}>Todo List ({incompleteCount})</h1>
         <HideCompleted />
 
         <LogInButtons />
@@ -35,12 +35,33 @@ const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted }) => {
         '' }
 
       </header>
-      <ul>{renderTasks()}</ul>
+      <ul className={classes.ul}>{renderTasks()}</ul>
     </div>
   );
 };
 
 const styles = {
+  header: {
+    background: '#d2edf4',
+    backgroundImage: 'linear-gradient(to bottom, #d0edf5, #e1d5f0 100%)',
+    padding: '20px 15px 15px 15px',
+    position: 'relative'
+  },
+
+  h1: {
+    fontSize: '1.5em',
+    margin: 0,
+    marginBottom: 10,
+    display: 'inline-block',
+    marginRight: '1em'
+  },
+
+  ul: {
+    margin: 0,
+    padding: 0,
+    background: 'white'
+  },
+
   container: {
     maxWidth: 600,
     margin: '0 auto',

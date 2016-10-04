@@ -1,7 +1,7 @@
 exports[`checked view`] = `
 <ul>
   <li
-    className="checked-4000425453">
+    className="li-3067692653 checked-4000425453">
     <button
       className="delete-236010562"
       onClick={[Function handleDelete]}>
@@ -32,7 +32,7 @@ exports[`checked view`] = `
 exports[`default view`] = `
 <ul>
   <li
-    className="">
+    className="li-3067692653">
     <button
       className="delete-236010562"
       onClick={[Function handleDelete]}>
@@ -63,7 +63,7 @@ exports[`default view`] = `
 exports[`non owner view`] = `
 <ul>
   <li
-    className="">
+    className="li-3067692653">
     <button
       className="delete-236010562"
       onClick={[Function handleDelete]}>
@@ -90,7 +90,7 @@ exports[`non owner view`] = `
 exports[`private view`] = `
 <ul>
   <li
-    className="private-1016974033">
+    className="li-3067692653 private-1016974033">
     <button
       className="delete-236010562"
       onClick={[Function handleDelete]}>

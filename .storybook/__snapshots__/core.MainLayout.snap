@@ -1,0 +1,5 @@
+exports[`default view`] = `
+<div>
+  <div />
+</div>
+`;

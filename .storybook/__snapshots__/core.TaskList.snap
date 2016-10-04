@@ -1,8 +1,10 @@
 exports[`default view`] = `
 <div
   className="container-264243677">
-  <header>
-    <h1>
+  <header
+    className="header-3102665611">
+    <h1
+      className="h1-529982976">
       Todo List (
       3
       )
@@ -22,6 +24,7 @@ exports[`default view`] = `
       </p>
     </div>
     <form
+      className="form-2005206659"
       onSubmit={[Function handleSubmit]}>
       <input
         className="newTask-2969458108"
@@ -31,9 +34,10 @@ exports[`default view`] = `
         value={undefined} />
     </form>
   </header>
-  <ul>
+  <ul
+    className="ul-2536593908">
     <li
-      className="">
+      className="li-3067692653">
       <button
         className="delete-236010562"
         onClick={[Function handleDelete]}>
@@ -59,7 +63,7 @@ exports[`default view`] = `
       </span>
     </li>
     <li
-      className="private-1016974033">
+      className="li-3067692653 private-1016974033">
       <button
         className="delete-236010562"
         onClick={[Function handleDelete]}>
@@ -85,7 +89,7 @@ exports[`default view`] = `
       </span>
     </li>
     <li
-      className="checked-4000425453">
+      className="li-3067692653 checked-4000425453">
       <button
         className="delete-236010562"
         onClick={[Function handleDelete]}>

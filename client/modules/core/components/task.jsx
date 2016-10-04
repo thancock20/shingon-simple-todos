@@ -10,6 +10,7 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
   return (
     <li
       className={classnames({
+        [classes.li]: true,
         [classes.checked]: task.checked,
         [classes.private]: task.private
       })}>
@@ -48,6 +49,17 @@ Task.propTypes = {
 };
 
 const styles = {
+  li: {
+    position: 'relative',
+    listStyle: 'none',
+    padding: 15,
+    borderBottom: '#eee solid 1px',
+
+    '@media (max-width: 600px)': {
+      padding: '12px 15px'
+    }
+  },
+
   text: {
     marginLeft: 10
   },
