@@ -1,5 +1,6 @@
 exports[`default view`] = `
-<div>
+<div
+  className="body-3131413633">
   <div />
 </div>
 `;

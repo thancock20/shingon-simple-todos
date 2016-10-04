@@ -1,5 +1,5 @@
 import React from 'react';
-import Load from '/lib/load_jss';
+import Load from 'shingon-load-jss';
 
 const NewTask = ({taskInput, create, setInput}) => {
   const handleSubmit = (event) => {
@@ -32,7 +32,7 @@ const styles = {
     marginBottom: -10,
     position: 'relative'
   },
-  
+
   newTask: {
     boxSizing: 'border-box',
     padding: '10px 0',

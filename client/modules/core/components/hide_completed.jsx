@@ -1,5 +1,5 @@
 import React from 'react';
-import Load from '/lib/load_jss';
+import Load from 'shingon-load-jss';
 
 const HideCompleted = ({ hideCompleted, toggleHideCompleted }) => (
   <label className={classes.hideCompleted}>

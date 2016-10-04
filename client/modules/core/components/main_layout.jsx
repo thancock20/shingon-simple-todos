@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Load from '/lib/load_jss';
+import Load from 'shingon-load-jss';
 
 const Layout = ({content = () => null }) => (
   <div className={classes.body}>

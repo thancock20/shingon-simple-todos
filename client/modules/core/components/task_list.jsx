@@ -1,5 +1,5 @@
 import React from 'react';
-import Load from '/lib/load_jss';
+import Load from 'shingon-load-jss';
 
 import Task from '../containers/task.js';
 import NewTask from '../containers/new_task.js';
