@@ -14,7 +14,7 @@ const NewTask = ({taskInput, create, setInput}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} >
+    <form className={classes.form} onSubmit={handleSubmit} >
       <input
         onChange={handleChange}
         className={classes.newTask}
@@ -27,6 +27,12 @@ const NewTask = ({taskInput, create, setInput}) => {
 };
 
 const styles = {
+  form: {
+    marginTop: 10,
+    marginBottom: -10,
+    position: 'relative'
+  },
+  
   newTask: {
     boxSizing: 'border-box',
     padding: '10px 0',
