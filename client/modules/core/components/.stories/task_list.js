@@ -9,8 +9,8 @@ import HideCompleted from '../../containers/hide_completed';
 setComposerStub(NewTask, (props) => {
   const data = {
     ...props,
-    create: () => {},
-    setInput: () => {}
+    create: action('new-task-submitted'),
+    setInput: action('new-task-changed')
   };
 
   return data;
@@ -19,9 +19,9 @@ setComposerStub(NewTask, (props) => {
 setComposerStub(Task, (props) => {
   const data = {
     ...props,
-    toggleChecked: () => {},
-    togglePrivate: () => {},
-    deleteTask: () => {}
+    toggleChecked: action('task-checked'),
+    togglePrivate: action('task-private-clicked'),
+    deleteTask: action('task-delete-clicked')
   };
 
   return data;
@@ -31,7 +31,7 @@ setComposerStub(HideCompleted, (props) => {
   const data = {
     ...props,
     hideCompleted: false,
-    toggleHideCompleted: () => {}
+    toggleHideCompleted: action('hide-completed-toggled')
   };
 
   return data;

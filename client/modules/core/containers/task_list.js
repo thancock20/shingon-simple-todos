@@ -9,8 +9,7 @@ export const composer = ({context}, onData) => {
   const incompleteCount = Collections.Task.find({ checked: { $ne: true } }).count();
   const currentUser = Meteor.user();
   const hideCompleted = LocalState.get('hideCompleted') || false;
-  const showLogIn = true;
-  onData(null, {tasks, incompleteCount, currentUser, hideCompleted, showLogIn});
+  onData(null, {tasks, incompleteCount, currentUser, hideCompleted});
 };
 
 export const depsMapper = (context, actions) => ({
