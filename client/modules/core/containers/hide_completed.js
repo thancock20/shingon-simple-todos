@@ -4,7 +4,7 @@ import HideCompleted from '../components/hide_completed.jsx';
 
 export const composer = ({context}, onData) => {
   const {LocalState} = context();
-  let hideCompleted = LocalState.get('hideCompleted') || false;
+  let hideCompleted = LocalState.get('hideCompleted');
 
   onData(null, {hideCompleted});
 };

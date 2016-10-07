@@ -4,7 +4,7 @@ import NewTask from '../components/new_task.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, LocalState, Collections} = context();
-  const taskInput = LocalState.get('taskInput') || '';
+  const taskInput = LocalState.get('taskInput');
 
   onData(null, {taskInput});
 };

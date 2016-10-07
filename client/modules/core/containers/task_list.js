@@ -9,7 +9,7 @@ export const composer = ({context}, onData) => {
   const tasks = Collections.Task.find({}, { sort: { createdAt: -1 } }).fetch();
   const incompleteCount = Collections.Task.find({ checked: { $ne: true } }).count();
   const currentUser = Meteor.user();
-  const hideCompleted = LocalState.get('hideCompleted') || false;
+  const hideCompleted = LocalState.get('hideCompleted');
   onData(null, {tasks, incompleteCount, currentUser, hideCompleted});
 };
 
