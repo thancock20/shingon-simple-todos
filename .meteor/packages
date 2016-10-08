@@ -20,7 +20,7 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 
 kadira:flow-router
 accounts-password
-alt:react-accounts-ui
+alt:react-accounts-unstyled
 accounts-base
 jagi:astronomy@2.0.0
 anti:gagarin@=0.4.12
