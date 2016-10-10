@@ -41,17 +41,6 @@ const styles = {
       zIndex: -1
     },
 
-    '& .alt-accounts-messages-error': {
-      color: 'red',
-      width: '90%',
-      margin: '5%'
-    },
-
-    '& .alt-accounts-login-separator': {
-      textAligin: 'center',
-      margin: '5%'
-    },
-
     '& button': {
       display: 'block',
       width: '90%',
@@ -87,32 +76,43 @@ const styles = {
       paddingLeft: '2%',
       border: 'solid 1px',
       borderRadius: 5
-    },
-
-    '& .alt-accounts-form-link': {
-      float: 'right',
-      margin: 2,
-      padding: 5,
-      cursor: 'pointer'
-    },
-
-    '& .altaccounts-form-link ~ .alt-accounts-form-link': {
-      float: 'left'
-    },
-
-    '& .alt-accounts-form-text': {
-      width: '90%',
-      margin: '5%'
-    },
-
-    '& .alt-accounts-form-close': {
-      float: 'right',
-      margin: 2,
-      padding: 5,
-      paddingTop: 0,
-      paddingBottom: 10,
-      cursor: 'pointer'
     }
+  },
+
+  '.alt-accounts-messages-error': {
+    color: 'red',
+    width: '90%',
+    margin: '5%'
+  },
+
+  '.alt-accounts-login-separator': {
+    textAligin: 'center',
+    margin: '5%'
+  },
+
+  '.alt-accounts-form-link': {
+    float: 'right',
+    margin: 2,
+    padding: 5,
+    cursor: 'pointer'
+  },
+
+  '.altaccounts-form-link ~ .alt-accounts-form-link': {
+    float: 'left'
+  },
+
+  '.alt-accounts-form-text': {
+    width: '90%',
+    margin: '5%'
+  },
+
+  '.alt-accounts-form-close': {
+    float: 'right',
+    margin: 2,
+    padding: 5,
+    paddingTop: 0,
+    paddingBottom: 10,
+    cursor: 'pointer'
   }
 };
 Load(styles, 'global');
