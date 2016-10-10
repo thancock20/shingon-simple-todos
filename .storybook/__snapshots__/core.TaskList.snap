@@ -19,9 +19,12 @@ exports[`default view`] = `
       Hide Completed Tasks
     </label>
     <div>
-      <p>
-        [Login goes here]
-      </p>
+      <div
+        className="alt-accounts-status">
+        <button>
+          Sign In
+        </button>
+      </div>
     </div>
     <form
       className="form-2005206659"
