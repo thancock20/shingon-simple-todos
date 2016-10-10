@@ -8,9 +8,9 @@ export const composer = ({context}, onData) => {
   Meteor.subscribe('tasks');
   const tasks = Collections.Task.find({}, { sort: { createdAt: -1 } }).fetch();
   const incompleteCount = Collections.Task.find({ checked: { $ne: true } }).count();
-  const currentUser = Meteor.user();
+  const isLoggedIn = Boolean(Meteor.user());
   const hideCompleted = LocalState.get('hideCompleted');
-  onData(null, {tasks, incompleteCount, currentUser, hideCompleted});
+  onData(null, {tasks, incompleteCount, isLoggedIn, hideCompleted});
 };
 
 export const depsMapper = (context, actions) => ({

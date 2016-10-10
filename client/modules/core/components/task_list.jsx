@@ -6,7 +6,7 @@ import NewTask from '../containers/new_task.js';
 import HideCompleted from '../containers/hide_completed.js';
 import LogInButtons from './log_in_buttons.jsx';
 
-const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted }) => {
+const TaskList = ({ tasks, incompleteCount, isLoggedIn, hideCompleted }) => {
   const renderTasks = () => {
     let filteredTasks = tasks;
     if (hideCompleted) {
@@ -30,9 +30,7 @@ const TaskList = ({ tasks, incompleteCount, currentUser, hideCompleted }) => {
 
         <LogInButtons />
 
-        { currentUser ?
-          <NewTask /> :
-        '' }
+        { isLoggedIn && <NewTask /> }
 
       </header>
       <ul className={classes.ul}>{renderTasks()}</ul>

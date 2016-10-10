@@ -72,13 +72,13 @@ describe('core.containers.task_list', () => {
       const onData = spy();
 
       const incompleteCount = 1;
-      const currentUser = 'Bob';
+      const isLoggedIn = true;
       const hideCompleted = true;
 
       composer({context}, onData);
       const args = onData.args[0];
       expect(args).to.deep.equal([
-        null, {tasks, incompleteCount, currentUser, hideCompleted}
+        null, {tasks, incompleteCount, isLoggedIn, hideCompleted}
       ]);
     });
   });

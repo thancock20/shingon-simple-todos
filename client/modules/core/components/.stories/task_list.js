@@ -63,7 +63,7 @@ storiesOf('core.TaskList', module)
     return (
       <TaskList
         tasks={tasks}
-        currentUser={true}
+        isLoggedIn={true}
         incompleteCount={3}
       />
     );
