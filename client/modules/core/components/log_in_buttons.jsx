@@ -4,13 +4,15 @@ import Load from 'shingon-load-jss';
 const logInButtons = () => (
   <div>
     {(typeof AccountStatus !== 'undefined') ?
-    <div>
-      <AccountStatus />
-      <AccountForm showClose='true' />
-    </div> :
-    <p>[Login goes here]</p>}
+      <div>
+        <AccountStatus />
+        <AccountForm showClose='true' />
+      </div> :
+      <div className="alt-accounts-status">
+        <button>Sign In</button>
+      </div> }
   </div>
-);
+    );
 
 const styles = {
   '.alt-accounts-status': {
