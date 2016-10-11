@@ -4,7 +4,7 @@ import Load from 'shingon-load-jss';
 import Task from '../containers/task.js';
 import NewTask from '../containers/new_task.js';
 import HideCompleted from '../containers/hide_completed.js';
-import LogInButtons from './log_in_buttons.jsx';
+import LogInButtons from '/client/modules/accounts/containers/log_in_buttons.js';
 
 const TaskList = ({ tasks, incompleteCount, isLoggedIn, hideCompleted }) => {
   const renderTasks = () => {

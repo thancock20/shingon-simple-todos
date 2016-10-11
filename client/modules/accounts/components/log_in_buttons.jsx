@@ -1,7 +1,7 @@
 import React from 'react';
 import Load from 'shingon-load-jss';
 
-const logInButtons = () => (
+const logInButtons = ({AccountStatus, AccountForm}) => (
   <div>
     {(typeof AccountStatus !== 'undefined') ?
       <div>

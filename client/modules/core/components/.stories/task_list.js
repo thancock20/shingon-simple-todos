@@ -5,6 +5,7 @@ import TaskList from '../task_list.jsx';
 import NewTask from '../../containers/new_task';
 import Task from '../../containers/task.js';
 import HideCompleted from '../../containers/hide_completed';
+import LogInButtons from '/client/modules/accounts/containers/log_in_buttons';
 
 setComposerStub(NewTask, (props) => {
   const data = {
@@ -36,6 +37,14 @@ setComposerStub(HideCompleted, (props) => {
 
   return data;
 });
+
+setComposerStub(LogInButtons, (props) => {
+  const data = {
+    ...props,
+  };
+
+  return data;
+})
 
 storiesOf('core.TaskList', module)
   .add('default view', () => {

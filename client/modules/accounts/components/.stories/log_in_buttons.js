@@ -6,6 +6,6 @@ import LogInButtons from '../log_in_buttons.jsx';
 storiesOf('core.LogInButtons', module)
   .add('default view', () => {
     return (
-      <LogInButtons />
+    <LogInButtons />
     );
   });
