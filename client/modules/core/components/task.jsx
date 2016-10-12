@@ -14,12 +14,15 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
         [classes.checked]: task.checked,
         [classes.private]: task.private
       })}>
-      <button
-        className={classes.delete}
-        onClick={handleDelete}
-      >
-        &times;
-      </button>
+
+      { task.isOwner && (
+        <button
+          className={classes.delete}
+          onClick={handleDelete}
+        >
+          &times;
+        </button>
+      ) }
 
       <input
         type="checkbox"
@@ -28,14 +31,14 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
         onClick={handleChecked}
       />
 
-      { task.isOwner ? (
+      { task.isOwner && (
         <button
           className={classes.togglePrivate}
           onClick={handlePrivate}
         >
           { task.private ? 'Private' : 'Public' }
         </button>
-      ) : '' }
+      ) }
 
       <span className={classes.text}>
         <strong>{task.username}</strong>: { task.text }
