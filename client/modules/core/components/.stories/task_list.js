@@ -44,7 +44,7 @@ setComposerStub(LogInButtons, (props) => {
   };
 
   return data;
-})
+});
 
 storiesOf('core.TaskList', module)
   .add('default view', () => {
