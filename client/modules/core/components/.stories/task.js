@@ -9,7 +9,7 @@ storiesOf('core.Task', module)
       text: 'Hello, World!',
       username: 'John',
       checked: false,
-      isOwner: true
+      isOwner: () => true
     };
 
     return (
@@ -25,7 +25,7 @@ storiesOf('core.Task', module)
       text: 'Hello, World!',
       username: 'John',
       checked: true,
-      isOwner: true
+      isOwner: () => true
     };
 
     return (
@@ -42,7 +42,7 @@ storiesOf('core.Task', module)
       username: 'John',
       checked: false,
       private: true,
-      isOwner: true
+      isOwner: () => true
     };
 
     return (
@@ -58,7 +58,7 @@ storiesOf('core.Task', module)
       text: 'Hello, World!',
       username: 'John',
       checked: false,
-      isOwner: false
+      isOwner: () => false
     };
 
     return (

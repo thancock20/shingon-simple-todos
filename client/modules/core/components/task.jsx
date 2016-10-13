@@ -15,7 +15,7 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
         [classes.private]: task.private
       })}>
 
-      { task.isOwner && (
+      { task.isOwner() && (
         <button
           className={classes.delete}
           onClick={handleDelete}
@@ -31,7 +31,7 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
         onClick={handleChecked}
       />
 
-      { task.isOwner && (
+      { task.isOwner() && (
         <button
           className={classes.togglePrivate}
           onClick={handlePrivate}

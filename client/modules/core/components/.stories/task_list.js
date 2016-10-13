@@ -54,19 +54,20 @@ storiesOf('core.TaskList', module)
         text: 'This is task 1',
         username: 'John',
         checked: false,
-        isOwner: true
+        isOwner: () => true
       }, {
         _id: 2,
         text: 'This is task 2',
         username: 'John',
         checked: false,
-        isOwner: true,
+        isOwner: () => true,
         private: true
       }, {
         _id: 3,
         text: 'This is task 3',
         username: 'Bob',
-        checked: true
+        checked: true,
+        isOwner: () => false
       } ];
 
     return (
