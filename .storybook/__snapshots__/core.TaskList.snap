@@ -93,17 +93,11 @@ exports[`default view`] = `
     </li>
     <li
       className="li-3067692653 checked-4000425453">
-      <button
-        className="delete-236010562"
-        onClick={[Function handleDelete]}>
-        ×
-      </button>
       <input
         checked={true}
         onClick={[Function handleChecked]}
         readOnly={true}
         type="checkbox" />
-      
       <span
         className="text-2780870173">
         <strong>
