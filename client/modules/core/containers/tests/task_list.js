@@ -15,27 +15,6 @@ describe('core.containers.task_list', () => {
     //   return Collections;
     // };
 
-    it('should subscribe to users', () => {
-      const Meteor = {subscribe: stub(), user: stub()};
-      Meteor.subscribe.returns({ready: () => false});
-      Meteor.user.returns('Bob');
-      const LocalState = {get: stub()};
-      LocalState.get.returns(true);
-
-      const tasks = [ {_id: 'abc123'} ];
-      const Collections = {Task: {find: stub()}};
-      Collections.Task.find.returns({fetch: () => tasks, count: () => 1});
-
-      const context = () => ({Meteor, LocalState, Collections});
-      const onData = spy();
-
-      composer({context}, onData);
-      const args = Meteor.subscribe.args[0];
-      expect(args.slice(0, 1)).to.deep.equal([
-        'users'
-      ]);
-    });
-
     it('should subscribe to tasks', () => {
       const Meteor = {subscribe: stub(), user: stub()};
       Meteor.subscribe.returns({ready: () => false});
@@ -51,7 +30,7 @@ describe('core.containers.task_list', () => {
       const onData = spy();
 
       composer({context}, onData);
-      const args = Meteor.subscribe.args[1];
+      const args = Meteor.subscribe.args[0];
       expect(args.slice(0, 1)).to.deep.equal([
         'tasks'
       ]);
