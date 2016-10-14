@@ -18,6 +18,9 @@ const primary = '#315481';
 const styles = {
   '.alt-accounts-status': {
     width: 300,
+    color: primary,
+    fontWeight: 'bold',
+    fontSize: '1.125em',
     '& button': {
       padding: '2%',
       border: 'solid 1px',
@@ -31,7 +34,9 @@ const styles = {
     position: 'absolute',
     zIndex: 1000,
     width: 300,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#eee',
+    border: `1px solid ${primary}`,
+    borderRadius: 5,
     paddingTop: 10,
     boxShadow: '10px 10px 5px darkgray',
 
