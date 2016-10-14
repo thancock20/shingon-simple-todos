@@ -1,13 +1,10 @@
-import Load from 'shingon-load-jss';
-
 const primary = '#315481';
-const white = '#eee';
-const red = '#ff3333';
+const neutral = '#eee';
+const error = '#ff3333';
 
-const styles = {
+export default {
   '.alt-accounts-status': {
     width: 300,
-    color: primary,
     fontWeight: 'bold',
     fontSize: '1.125em',
     '& button': {
@@ -16,14 +13,14 @@ const styles = {
       borderRadius: 5,
       cursor: 'pointer',
       backgroundColor: primary,
-      color: white
+      color: neutral
     }
   },
   '.alt-accounts-form': {
     position: 'absolute',
     zIndex: 1000,
     width: 300,
-    backgroundColor: white,
+    backgroundColor: neutral,
     border: `1px solid ${primary}`,
     borderRadius: 5,
     paddingTop: 10,
@@ -45,7 +42,7 @@ const styles = {
       paddingTop: '2%',
       paddingBottom: '2%',
       backgroundColor: primary,
-      color: white,
+      color: neutral,
       border: 'solid 1px',
       borderRadius: 5,
       cursor: 'pointer'
@@ -78,7 +75,7 @@ const styles = {
   },
 
   '.alt-accounts-messages-error': {
-    color: red,
+    color: error,
     width: '90%',
     margin: '5%'
   },
@@ -115,4 +112,3 @@ const styles = {
     color: primary
   }
 };
-Load(styles, 'global');
