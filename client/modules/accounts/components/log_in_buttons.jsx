@@ -14,6 +14,7 @@ const logInButtons = ({AccountStatus, AccountForm}) => (
   </div>
     );
 
+const primary = '#315481';
 const styles = {
   '.alt-accounts-status': {
     width: 300,
@@ -21,7 +22,9 @@ const styles = {
       padding: '2%',
       border: 'solid 1px',
       borderRadius: 5,
-      cursor: 'pointer'
+      cursor: 'pointer',
+      backgroundColor: primary,
+      color: '#eee'
     }
   },
   '.alt-accounts-form': {
@@ -47,7 +50,8 @@ const styles = {
       margin: '5%',
       paddingTop: '2%',
       paddingBottom: '2%',
-      backgroundColor: 'cornflowerblue',
+      backgroundColor: primary,
+      color: '#eee',
       border: 'solid 1px',
       borderRadius: 5,
       cursor: 'pointer'
@@ -70,17 +74,17 @@ const styles = {
       width: '87%',
       marginLeft: '5%',
       marginBottom: '5%',
-      marginTop: '5%',
+      marginTop: '2%',
       paddingTop: '2%',
       paddingBottom: '2%',
       paddingLeft: '2%',
-      border: 'solid 1px',
+      border: `solid 1px ${primary}`,
       borderRadius: 5
     }
   },
 
   '.alt-accounts-messages-error': {
-    color: 'red',
+    color: '#ff3333',
     width: '90%',
     margin: '5%'
   },
@@ -94,7 +98,8 @@ const styles = {
     float: 'right',
     margin: 2,
     padding: 5,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: primary
   },
 
   '.altaccounts-form-link ~ .alt-accounts-form-link': {
@@ -112,7 +117,8 @@ const styles = {
     padding: 5,
     paddingTop: 0,
     paddingBottom: 10,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: primary
   }
 };
 Load(styles, 'global');
