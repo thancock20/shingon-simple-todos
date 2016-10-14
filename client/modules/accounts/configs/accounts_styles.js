@@ -1,6 +1,8 @@
 import Load from 'shingon-load-jss';
 
 const primary = '#315481';
+const white = '#eee';
+const red = '#ff3333';
 
 const styles = {
   '.alt-accounts-status': {
@@ -14,14 +16,14 @@ const styles = {
       borderRadius: 5,
       cursor: 'pointer',
       backgroundColor: primary,
-      color: '#eee'
+      color: white
     }
   },
   '.alt-accounts-form': {
     position: 'absolute',
     zIndex: 1000,
     width: 300,
-    backgroundColor: '#eee',
+    backgroundColor: white,
     border: `1px solid ${primary}`,
     borderRadius: 5,
     paddingTop: 10,
@@ -43,7 +45,7 @@ const styles = {
       paddingTop: '2%',
       paddingBottom: '2%',
       backgroundColor: primary,
-      color: '#eee',
+      color: white,
       border: 'solid 1px',
       borderRadius: 5,
       cursor: 'pointer'
@@ -70,13 +72,13 @@ const styles = {
       paddingTop: '2%',
       paddingBottom: '2%',
       paddingLeft: '2%',
-      border: `solid 1px ${primary}`,
+      border: `1px solid ${primary}`,
       borderRadius: 5
     }
   },
 
   '.alt-accounts-messages-error': {
-    color: '#ff3333',
+    color: red,
     width: '90%',
     margin: '5%'
   },
