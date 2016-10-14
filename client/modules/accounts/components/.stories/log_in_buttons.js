@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
 import LogInButtons from '../log_in_buttons.jsx';
+import '../../configs/accounts_styles';
 
 storiesOf('core.LogInButtons', module)
   .add('default view', () => {
