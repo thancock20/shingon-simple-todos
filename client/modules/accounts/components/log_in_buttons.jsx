@@ -1,4 +1,8 @@
 import React from 'react';
+import Styles from '../configs/accounts_styles';
+import Load from 'shingon-load-jss';
+
+Load(Styles, 'global');
 
 const logInButtons = ({AccountStatus, AccountForm}) => (
   <div>
