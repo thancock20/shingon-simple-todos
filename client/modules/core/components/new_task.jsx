@@ -1,30 +1,48 @@
 import React from 'react';
 import Load from 'shingon-load-jss';
 
-const NewTask = ({taskInput, create, setInput}) => {
-  const handleSubmit = (event) => {
+class NewTask extends React.Component {
+  constructor() {
+    super();
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.state = {
+      taskInput: ''
+    };
+  }
+
+  handleSubmit(event) {
     if (event && event.preventDefault) {
       event.preventDefault();
     }
-    create(taskInput);
-  };
+    this.props.create(this.state.taskInput);
+    this.setState({
+      taskInput: ''
+    });
+  }
 
-  const handleChange = (event) => {
-    setInput(event.target.value);
-  };
+  handleChange(event) {
+    this.setState({
+      taskInput: event.target.value
+    });
+  }
 
-  return (
-    <form className={classes.form} onSubmit={handleSubmit} >
-      <input
-        onChange={handleChange}
-        className={classes.newTask}
-        type="text"
-        value={taskInput}
-        placeholder="Type to add new tasks"
-      />
-    </form>
-  );
-};
+  render() {
+    return (
+      <form className={classes.form} onSubmit={this.handleSubmit} >
+        <input
+          onChange={this.handleChange}
+          className={classes.newTask}
+          type="text"
+          value={this.state.taskInput}
+          placeholder="Type to add new tasks"
+        />
+      </form>
+    );
+  }
+}
 
 const styles = {
   form: {

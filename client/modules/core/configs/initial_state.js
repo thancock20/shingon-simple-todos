@@ -1,4 +1,3 @@
 export default {
-  hideCompleted: false,
-  taskInput: ''
+  hideCompleted: false
 };

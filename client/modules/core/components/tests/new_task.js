@@ -9,25 +9,16 @@ describe('core.components.new_task', () => {
     expect(shallow(<NewTask />).length).to.equal(1);
   });
 
-  it('should call setInput when value changes', () => {
-    const setInput = spy();
-    const el = shallow(<NewTask setInput={setInput} />);
-    el.find('input').simulate('change', {target: {value: 'Hello, World!'}});
-    const Args = setInput.args[0];
-
-    expect(Args.slice(0, 1)).to.deep.equal([
-      'Hello, World!'
-    ]);
-  });
-
   it('should call create  when form submitted', () => {
     const create = spy();
-    const el = shallow(<NewTask create={create} taskInput='Hello, World!'/>);
+    const el = shallow(<NewTask create={create} />);
     el.find('form').simulate('submit');
-    const Args = create.args[0];
 
-    expect(Args.slice(0, 1)).to.deep.equal([
-      'Hello, World!'
-    ]);
+    expect(create.called).to.equal(true);
+    // const Args = create.args[0];
+    //
+    // expect(Args.slice(0, 1)).to.deep.equal([
+    //   ''
+    // ]);
   });
 });
