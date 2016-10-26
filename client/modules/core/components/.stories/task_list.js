@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import { withKnobs, boolean, number, object } from '@kadira/storybook-addon-knobs';
 import { setComposerStub } from 'react-komposer';
 import TaskList from '../task_list.jsx';
 import NewTask from '../../containers/new_task';
@@ -47,6 +48,7 @@ setComposerStub(LogInButtons, (props) => {
 });
 
 storiesOf('core.TaskList', module)
+  .addDecorator(withKnobs)
   .add('default view', () => {
     const tasks = [
       {
@@ -72,9 +74,9 @@ storiesOf('core.TaskList', module)
 
     return (
       <TaskList
-        tasks={tasks}
-        isLoggedIn={true}
-        incompleteCount={3}
+        tasks={object('Tasks', tasks)}
+        isLoggedIn={boolean('IsLoggedIn', true)}
+        incompleteCount={number('IncompleteCount', 3)}
       />
     );
   });
