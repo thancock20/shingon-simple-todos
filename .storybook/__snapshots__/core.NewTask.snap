@@ -1,12 +1,12 @@
 exports[`default view`] = `
 <form
   className="form-2005206659"
-  onSubmit={[Function handleSubmit]}>
+  onSubmit={[Function bound handleSubmit]}>
   <input
     className="newTask-2969458108"
-    onChange={[Function handleChange]}
+    onChange={[Function bound handleChange]}
     placeholder="Type to add new tasks"
     type="text"
-    value={undefined} />
+    value="" />
 </form>
 `;
