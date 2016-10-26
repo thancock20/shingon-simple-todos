@@ -46,9 +46,11 @@ const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
     </li>
   );
 };
-
 Task.propTypes = {
   task: PropTypes.object.isRequired,
+  toggleChecked: PropTypes.func,
+  togglePrivate: PropTypes.func,
+  deleteTask: PropTypes.func
 };
 
 const styles = {

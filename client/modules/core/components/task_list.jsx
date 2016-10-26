@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Load from 'shingon-load-jss';
 
 import Task from '../containers/task.js';
@@ -36,6 +36,12 @@ const TaskList = ({ tasks, incompleteCount, isLoggedIn, hideCompleted }) => {
       <ul className={classes.ul}>{renderTasks()}</ul>
     </div>
   );
+};
+TaskList.propTypes = {
+  tasks: PropTypes.array,
+  incompleteCount: PropTypes.number,
+  isLoggedIn: PropTypes.bool,
+  hideCompleted: PropTypes.bool
 };
 
 const styles = {

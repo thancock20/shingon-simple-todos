@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Load from 'shingon-load-jss';
 
 const HideCompleted = ({ hideCompleted, toggleHideCompleted }) => (
@@ -12,6 +12,10 @@ const HideCompleted = ({ hideCompleted, toggleHideCompleted }) => (
     Hide Completed Tasks
   </label>
 );
+HideCompleted.propTypes = {
+  hideCompleted: PropTypes.bool,
+  toggleHideCompleted: PropTypes.func
+};
 
 const styles = {
   hideCompleted: {
