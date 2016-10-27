@@ -3,6 +3,7 @@ import routes from './routes.jsx';
 import methodStubs from './configs/method_stubs';
 import initialState from './configs/initial_state';
 import initializeState from '/lib/initialize_state';
+import accountsConfig from './configs/accounts-config';
 
 export default {
   routes,
@@ -10,5 +11,6 @@ export default {
   load(context) {
     methodStubs(context);
     initializeState(context, initialState);
+    accountsConfig();
   }
 };

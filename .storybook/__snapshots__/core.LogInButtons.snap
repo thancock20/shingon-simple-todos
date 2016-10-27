@@ -1,10 +1,9 @@
 exports[`default view`] = `
 <div>
-  <div
-    className="alt-accounts-status">
-    <button>
-      Sign In
-    </button>
+  <div>
+    <u>
+      Sign in ▾
+    </u>
   </div>
 </div>
 `;

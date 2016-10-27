@@ -1,18 +1,13 @@
 import React from 'react';
-import Styles from '../configs/accounts_styles';
-import Load from 'shingon-load-jss';
 
-Load(Styles, 'global');
-
-const logInButtons = ({AccountStatus, AccountForm}) => (
+const logInButtons = ({Blaze}) => (
   <div>
-    {(typeof AccountStatus !== 'undefined') ?
+    {(typeof Blaze !== 'undefined') ?
       <div>
-        <AccountStatus />
-        <AccountForm showClose='true' />
+        <Blaze template="loginButtons" />
       </div> :
-      <div className="alt-accounts-status">
-        <button>Sign In</button>
+      <div>
+        <u>Sign in ▾</u>
       </div> }
   </div>
     );

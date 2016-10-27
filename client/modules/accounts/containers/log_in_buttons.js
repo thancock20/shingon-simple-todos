@@ -1,13 +1,11 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
 import LogInButtons from '../components/log_in_buttons.jsx';
-import altAccountsConfig from '../configs/alt-accounts-config';
 
 export const composer = ({context}, onData) => {
-  const {AccountStatus, AccountForm} = context();
-  altAccountsConfig();
+  const {Blaze} = context();
 
-  onData(null, {AccountStatus, AccountForm});
+  onData(null, {Blaze});
 };
 
 export const depsMapper = (context, actions) => ({
