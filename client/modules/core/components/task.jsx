@@ -1,51 +1,46 @@
 import React, { PropTypes } from 'react';
 import Load from 'shingon-load-jss';
 import classnames from 'classnames';
+import {partial} from 'partial-application';
 
-const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => {
-  const handleDelete = () => deleteTask(task._id);
-  const handleChecked = () => toggleChecked(task._id, task.checked);
-  const handlePrivate = () => togglePrivate(task._id, task.private);
+const Task = ({ task, toggleChecked, togglePrivate, deleteTask }) => (
+  <li
+    className={classnames({
+      [classes.li]: true,
+      [classes.checked]: task.checked,
+      [classes.private]: task.private
+    })}>
 
-  return (
-    <li
-      className={classnames({
-        [classes.li]: true,
-        [classes.checked]: task.checked,
-        [classes.private]: task.private
-      })}>
+    { task.isOwner() && (
+      <button
+        className={classes.delete}
+        onClick={partial(deleteTask, task._id)}
+      >
+        &times;
+      </button>
+    ) }
 
-      { task.isOwner() && (
-        <button
-          className={classes.delete}
-          onClick={handleDelete}
-        >
-          &times;
-        </button>
-      ) }
+    <input
+      type="checkbox"
+      readOnly
+      checked={task.checked}
+      onClick={partial(toggleChecked, task._id, task.checked)}
+    />
 
-      <input
-        type="checkbox"
-        readOnly
-        checked={task.checked}
-        onClick={handleChecked}
-      />
+    { task.isOwner() && (
+      <button
+        className={classes.togglePrivate}
+        onClick={partial(togglePrivate, task._id, task.private)}
+      >
+        { task.private ? 'Private' : 'Public' }
+      </button>
+    ) }
 
-      { task.isOwner() && (
-        <button
-          className={classes.togglePrivate}
-          onClick={handlePrivate}
-        >
-          { task.private ? 'Private' : 'Public' }
-        </button>
-      ) }
-
-      <span className={classes.text}>
-        <strong>{task.username}</strong>: { task.text }
-      </span>
-    </li>
-  );
-};
+    <span className={classes.text}>
+      <strong>{task.username}</strong>: { task.text }
+    </span>
+  </li>
+);
 Task.propTypes = {
   task: PropTypes.object.isRequired,
   toggleChecked: PropTypes.func,

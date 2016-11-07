@@ -19,6 +19,9 @@ storiesOf('core.Task', module)
       <ul>
         <Task
           task={task}
+      deleteTask={action('task-delete-clicked')}
+      togglePrivate={action('task-private-clicked')}
+      toggleChecked={action('task-checked-clicked')}
         />
       </ul>
     );

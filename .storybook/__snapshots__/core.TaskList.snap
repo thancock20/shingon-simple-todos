@@ -42,17 +42,17 @@ exports[`default view`] = `
       className="li-3067692653">
       <button
         className="delete-236010562"
-        onClick={[Function handleDelete]}>
+        onClick={[Function anonymous]}>
         ×
       </button>
       <input
         checked={false}
-        onClick={[Function handleChecked]}
+        onClick={[Function anonymous]}
         readOnly={true}
         type="checkbox" />
       <button
         className="togglePrivate-2867110634"
-        onClick={[Function handlePrivate]}>
+        onClick={[Function anonymous]}>
         Public
       </button>
       <span
@@ -68,17 +68,17 @@ exports[`default view`] = `
       className="li-3067692653 private-1016974033">
       <button
         className="delete-236010562"
-        onClick={[Function handleDelete]}>
+        onClick={[Function anonymous]}>
         ×
       </button>
       <input
         checked={false}
-        onClick={[Function handleChecked]}
+        onClick={[Function anonymous]}
         readOnly={true}
         type="checkbox" />
       <button
         className="togglePrivate-2867110634"
-        onClick={[Function handlePrivate]}>
+        onClick={[Function anonymous]}>
         Private
       </button>
       <span
@@ -94,7 +94,7 @@ exports[`default view`] = `
       className="li-3067692653 checked-4000425453">
       <input
         checked={true}
-        onClick={[Function handleChecked]}
+        onClick={[Function anonymous]}
         readOnly={true}
         type="checkbox" />
       <span
