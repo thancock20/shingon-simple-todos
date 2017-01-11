@@ -1,18 +1,25 @@
 import React from 'react';
-import {mount} from 'react-mounter';
+import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import MainLayout from './components/main_layout.jsx';
 import TaskList from './containers/task_list.js';
 
-export default function (injectDeps, {FlowRouter}) {
+export default function (injectDeps, {Meteor}) {
   const MainLayoutCtx = injectDeps(MainLayout);
 
-  FlowRouter.route('/', {
-    name: 'home',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<TaskList />)
-      });
-    }
+  Meteor.startup(() => {
+    ReactDOM.render(
+      (<Router
+        history={browserHistory}
+        onUpdate={() => {window.scrollTo(0, 0);}}>
+        <Route
+          path="/"
+          component={MainLayoutCtx}>
+          <IndexRoute component={TaskList} />
+        </Route>
+      </Router>),
+      document.querySelector('#reactRoot')
+    );
   });
 }

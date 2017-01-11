@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Load from 'shingon-load-jss';
 
-const Layout = ({content = () => null }) => (
+const Layout = ({children}) => (
   <div className={classes.body}>
     <Helmet
       title="Todo List"
@@ -11,7 +11,7 @@ const Layout = ({content = () => null }) => (
       ]}
     />
     <div>
-      {content()}
+      {children}
     </div>
   </div>
 );
